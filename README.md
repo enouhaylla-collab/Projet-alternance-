@@ -1,4 +1,4 @@
-# Projet-alternance-
+# AVENIR-
 Création d'un site qui regroupe des offres d'alternance pour le métier de CRM manger 
 M1705 : Chargée de CRM ou Costumer Relationship manager, Spécialiste Marketing Automation Chargée d'inbound Marketing  
 Questions :  
