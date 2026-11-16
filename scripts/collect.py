@@ -42,6 +42,8 @@ def norm(s):
 
 def variante(intitule):
     t = " " + norm(intitule) + " "
+    if any(x in t for x in config.EXCLUSIONS):
+        return ""
     for nom, motifs in config.VARIANTES:
         if any(m in t for m in motifs):
             return nom
@@ -140,13 +142,30 @@ def ligne_ft(o, date):
 
 
 # ---------------- La Bonne Alternance ----------------
-def recherche_lba():
-    r = appel("GET", LBA_SEARCH_URL, params={"romes": config.LBA_ROMES},
+def appel_lba(lat, lon, rayon):
+    r = appel("GET", LBA_SEARCH_URL,
+              params={"romes": config.LBA_ROMES, "latitude": lat, "longitude": lon, "radius": rayon},
               headers={"Authorization": "Bearer " + secret("LBA_TOKEN"), "Accept": "application/json"})
     if r.status_code != 200:
         raise RuntimeError(f"La Bonne Alternance HTTP {r.status_code} : {r.text[:200]}")
     j = r.json()
     return j.get("jobs", []) or [], j.get("recruiters", []) or []
+
+
+def recherche_lba():
+    """Offres autour de 10 grandes villes ; recruteurs (marché caché) autour de Clermont-Ferrand."""
+    jobs, vus = [], set()
+    for _ville, lat, lon, rayon in config.LBA_POINTS_OFFRES:
+        js, _ = appel_lba(lat, lon, rayon)
+        for j in js:
+            cle = (j.get("identifier") or {}).get("id") or json.dumps(j.get("offer", {}).get("title"))
+            if cle not in vus:
+                vus.add(cle)
+                jobs.append(j)
+        time.sleep(0.4)
+    _v, lat, lon, rayon = config.LBA_POINT_RECRUTEURS
+    _, recs = appel_lba(lat, lon, rayon)
+    return jobs, recs
 
 
 def lieu_lba(w):
@@ -236,14 +255,17 @@ def collecte_lba(date, heure, offres, log):
         l = ligne_lba(j, date)
         l["requetes"] = "lba_m1705"
         offres.setdefault(l["id"], l)
-    params = json.dumps({"romes": config.LBA_ROMES})
+    villes = ", ".join(v for v, *_ in config.LBA_POINTS_OFFRES)
+    params = json.dumps({"romes": config.LBA_ROMES, "rayon_km": 100, "villes": villes}, ensure_ascii=False)
+    v, lat, lon, rayon = config.LBA_POINT_RECRUTEURS
+    params_rec = json.dumps({"romes": config.LBA_ROMES, "autour_de": v, "rayon_km": rayon}, ensure_ascii=False)
     log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API offres)",
-                "requete_id": "lba_m1705", "requete": "Offres en alternance, code ROME M1705",
+                "requete_id": "lba_m1705", "requete": "Offres en alternance, code ROME M1705, 10 grandes villes",
                 "parametres": params, "total_annonce": len(jobs), "recuperees": len(jobs),
                 "limites": config.LBA_LIMITES})
     log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API recruteurs)",
-                "requete_id": "lba_recruteurs", "requete": "Entreprises susceptibles de recruter, M1705",
-                "parametres": params, "total_annonce": len(recs), "recuperees": len(recs),
+                "requete_id": "lba_recruteurs", "requete": f"Entreprises susceptibles de recruter, M1705, autour de {v}",
+                "parametres": params_rec, "total_annonce": len(recs), "recuperees": len(recs),
                 "limites": config.LBA_LIMITES})
     print(f"lba: {len(jobs)} offres, {len(recs)} recruteurs")
     return [ligne_recruteur(r, date) for r in recs]

@@ -18,6 +18,13 @@ VARIANTES = [   # testées dans l'ordre : la première qui correspond donne la v
     ("Chargé·e CRM", ["crm"]),
 ]
 
+# Intitulés exclus : métiers techniques ou commerciaux qui citent le CRM sans être le métier étudié
+EXCLUSIONS = ["developpeur", "developer", "testeur", "architecte", "integrateur", "administrateur",
+              "ingenieur", "devops", "technique", "power platform", "dynamics 365", " it ", "support",
+              "back-office", "back office", "commercial", "sales", "business developer", "consultant fonctionnel",
+              "gestionnaire d'applications", "data engineer", "office manager", "freelance",
+              "technico", "dynamics", "salesforce developer"]
+
 # Requêtes France Travail : id stable, libellé lisible, paramètres envoyés, détail = récupérer les offres
 REQUETES_FT = [
     {"id": "ft_rome_m1705", "libelle": "Code ROME M1705 (Marketing), France entière",
@@ -31,6 +38,12 @@ REQUETES_FT = [
     {"id": "ft_automation", "libelle": "Mots-clés « marketing automation », France entière",
      "params": {"motsCles": "marketing automation"}, "detail": True,
      "limites": "Mots recherchés dans tout le texte de l'offre ; volume faible, donc sensible aux variations."},
+    {"id": "ft_relationnel", "libelle": "Mots-clés « marketing relationnel », France entière",
+     "params": {"motsCles": "marketing relationnel"}, "detail": True,
+     "limites": "Mots recherchés dans tout le texte ; capte les offres CRM qui n'utilisent pas le sigle."},
+    {"id": "ft_fidelisation", "libelle": "Mots-clés « fidélisation client », France entière",
+     "params": {"motsCles": "fidélisation client"}, "detail": True,
+     "limites": "Ramène aussi des postes de vente ou de relation client en magasin : filtrés par l'intitulé."},
     {"id": "ft_crm_m1705", "libelle": "Mot-clé « CRM » dans le code ROME M1705",
      "params": {"codeROME": ROME, "motsCles": "CRM"}, "detail": True,
      "limites": "Croisement le plus proche du métier ; exclut les offres CRM classées dans un autre code ROME."},
@@ -38,9 +51,18 @@ REQUETES_FT = [
 
 # La Bonne Alternance : offres en alternance et entreprises qui recrutent (marché caché)
 LBA_ROMES = ROME
-LBA_LIMITES = ("Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705 ; "
-               "les « recruteurs » sont des entreprises identifiées comme susceptibles d'embaucher "
-               "(candidature spontanée), pas des offres publiées.")
+# Points de recherche (latitude, longitude, rayon en km) : les offres d'alternance sont cherchées autour
+# des grandes villes ; le marché caché (recruteurs) autour de Clermont-Ferrand, où je cherche en priorité.
+LBA_POINTS_OFFRES = [("Paris", 48.8566, 2.3522, 100), ("Lyon", 45.7640, 4.8357, 100),
+                     ("Clermont-Ferrand", 45.7772, 3.0870, 100), ("Bordeaux", 44.8378, -0.5792, 100),
+                     ("Lille", 50.6292, 3.0573, 100), ("Nantes", 47.2184, -1.5536, 100),
+                     ("Marseille", 43.2965, 5.3698, 100), ("Toulouse", 43.6047, 1.4442, 100),
+                     ("Strasbourg", 48.5734, 7.7521, 100), ("Rennes", 48.1173, -1.6778, 100)]
+LBA_POINT_RECRUTEURS = ("Clermont-Ferrand", 45.7772, 3.0870, 60)
+LBA_LIMITES = ("Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705, "
+               "dans un rayon de 100 km autour de 10 grandes villes (zones rurales moins couvertes) ; "
+               "les « recruteurs » sont des entreprises que l'algorithme de La Bonne Alternance juge "
+               "susceptibles d'embaucher (candidature spontanée), pas des offres publiées.")
 
 # Dictionnaire de compétences et d'outils : (libellé, catégorie, motifs recherchés sans accents)
 COMPETENCES = [

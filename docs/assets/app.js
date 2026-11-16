@@ -28,7 +28,7 @@ function src(reqId, extra = "") {
   <b>Limites :</b> ${esc(s.limites)}${extra ? "<br>" + extra : ""}</div>`;
 }
 function srcMetier(extra = "") {
-  return `<div class="src"><b>Requêtes :</b> union des requêtes détaillées France Travail (« CRM », « marketing automation », « CRM » dans M1705) et des offres La Bonne Alternance M1705, puis filtre sur l'intitulé (variantes du métier, page 1).<br>
+  return `<div class="src"><b>Requêtes :</b> union des requêtes détaillées France Travail (« CRM », « marketing automation », « marketing relationnel », « fidélisation client », « CRM » dans M1705) et des offres La Bonne Alternance M1705, puis filtre sur l'intitulé (variantes du métier, page 1).<br>
   <b>Date :</b> extraction du ${dateFr(S.derniere)} · <b>Canaux :</b> France Travail, La Bonne Alternance<br>
   <b>Limites :</b> France Travail renvoie au plus 1 150 offres par requête ; une offre absente de ces canaux (site carrière, réseau) n'est pas comptée ; le filtre par intitulé peut écarter des offres mal titrées.${extra ? "<br>" + extra : ""}</div>`;
 }
@@ -55,7 +55,7 @@ const RENDU = {
   },
   metier() {
     if (S.vide) { $("#donnees").innerHTML = vide(); return; }
-    $("#variantes").innerHTML = bars(S.variantes, S.comptes.offres_metier) + srcMetier("Chaque offre est rattachée à la première variante dont un motif apparaît dans son intitulé (liste dans scripts/config.py).");
+    $("#variantes").innerHTML = bars(S.variantes, S.comptes.offres_metier) + srcMetier("Chaque offre est rattachée à la première variante dont un motif apparaît dans son intitulé (liste dans scripts/config.py). Sont exclus les intitulés techniques ou commerciaux qui citent le CRM sans être le métier (développeur, testeur, consultant Dynamics, commercial, missions freelance…).");
     $("#intitules").innerHTML = bars(S.intitules, null, 15) + srcMetier("Intitulés nettoyés des mentions (H/F) et des parenthèses.");
   },
   offres() {

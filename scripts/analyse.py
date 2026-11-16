@@ -13,7 +13,7 @@ from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(__file__))
 import config  # noqa: E402
-from collect import norm  # noqa: E402
+from collect import norm, variante  # noqa: E402
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(RACINE, "data")
@@ -26,7 +26,12 @@ def lire(chemin):
     if not os.path.exists(chemin):
         return []
     with open(chemin, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        lignes = list(csv.DictReader(f))
+    # la variante est recalculée avec la configuration actuelle (exclusions comprises)
+    for l in lignes:
+        if "intitule" in l and "variante_metier" in l:
+            l["variante_metier"] = variante(l["intitule"])
+    return lignes
 
 
 def top(compteur, n=15):
