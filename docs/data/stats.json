@@ -1,14 +1,14 @@
 {
  "metier": "Chargé·e CRM / marketing automation",
  "rome": "M1705",
- "genere_le": "2026-11-16 18:56 UTC",
+ "genere_le": "2026-11-16 19:13 UTC",
  "dates": [
   "2026-11-16"
  ],
  "extractions": [
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_automation",
    "requete": "Mots-clés « marketing automation », France entière",
@@ -19,18 +19,18 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_crm",
    "requete": "Mot-clé « CRM », France entière",
    "parametres": "{\"motsCles\": \"CRM\"}",
-   "total_annonce": "274",
-   "recuperees": "274",
+   "total_annonce": "269",
+   "recuperees": "269",
    "limites": "Le mot « CRM » apparaît aussi dans des offres commerciales qui demandent seulement d'utiliser un logiciel CRM : le site distingue les offres dont l'intitulé désigne le métier."
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_crm_m1705",
    "requete": "Mot-clé « CRM » dans le code ROME M1705",
@@ -41,7 +41,7 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_fidelisation",
    "requete": "Mots-clés « fidélisation client », France entière",
@@ -52,7 +52,7 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_relationnel",
    "requete": "Mots-clés « marketing relationnel », France entière",
@@ -63,7 +63,7 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "France Travail (API Offres d'emploi v2)",
    "requete_id": "ft_rome_m1705",
    "requete": "Code ROME M1705 (Marketing), France entière",
@@ -74,7 +74,7 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "La Bonne Alternance (API offres)",
    "requete_id": "lba_m1705",
    "requete": "Offres en alternance, code ROME M1705, 10 grandes villes",
@@ -85,7 +85,7 @@
   },
   {
    "date": "2026-11-16",
-   "heure_utc": "18:56",
+   "heure_utc": "19:12",
    "canal": "La Bonne Alternance (API recruteurs)",
    "requete_id": "lba_recruteurs",
    "requete": "Entreprises susceptibles de recruter, M1705, autour de Clermont-Ferrand",
@@ -155,7 +155,7 @@
   "ft_crm": [
    {
     "date": "2026-11-16",
-    "total": 274
+    "total": 269
    }
   ],
   "ft_crm_m1705": [
@@ -197,7 +197,7 @@
  },
  "derniere": "2026-11-16",
  "comptes": {
-  "offres_uniques": 306,
+  "offres_uniques": 301,
   "offres_metier": 39,
   "offres_metier_ft": 39,
   "offres_metier_lba": 0,
