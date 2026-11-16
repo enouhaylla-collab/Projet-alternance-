@@ -63,6 +63,11 @@ def departement(libelle, code_postal=""):
     return ""
 
 
+def secret(nom):
+    """Valeur d'un secret, sans espace ni retour à la ligne collés par erreur."""
+    return (os.environ.get(nom) or "").strip()
+
+
 def appel(methode, url, essais=5, **kw):
     for i in range(essais):
         r = requests.request(methode, url, timeout=40, **kw)
@@ -76,9 +81,10 @@ def appel(methode, url, essais=5, **kw):
 # ---------------- France Travail ----------------
 def token_ft():
     r = appel("POST", FT_TOKEN_URL, data={
-        "grant_type": "client_credentials", "client_id": os.environ["FT_CLIENT_ID"],
-        "client_secret": os.environ["FT_CLIENT_SECRET"], "scope": "api_offresdemploiv2 o2dsoffre"})
-    r.raise_for_status()
+        "grant_type": "client_credentials", "client_id": secret("FT_CLIENT_ID"),
+        "client_secret": secret("FT_CLIENT_SECRET"), "scope": "api_offresdemploiv2 o2dsoffre"})
+    if r.status_code != 200:
+        raise RuntimeError(f"Connexion France Travail refusée (HTTP {r.status_code}) : {r.text[:300]}")
     return r.json()["access_token"]
 
 
@@ -136,7 +142,7 @@ def ligne_ft(o, date):
 # ---------------- La Bonne Alternance ----------------
 def recherche_lba():
     r = appel("GET", LBA_SEARCH_URL, params={"romes": config.LBA_ROMES},
-              headers={"Authorization": "Bearer " + os.environ["LBA_TOKEN"], "Accept": "application/json"})
+              headers={"Authorization": "Bearer " + secret("LBA_TOKEN"), "Accept": "application/json"})
     if r.status_code != 200:
         raise RuntimeError(f"La Bonne Alternance HTTP {r.status_code} : {r.text[:200]}")
     j = r.json()
@@ -199,68 +205,86 @@ def journal(lignes):
         w.writerows(lignes)
 
 
+def collecte_ft(date, heure, offres, facettes, log):
+    tok = token_ft()
+    for q in config.REQUETES_FT:
+        total, res, fac = recherche_ft(tok, q["params"], q["detail"])
+        for o in res:
+            l = ligne_ft(o, date)
+            if l["id"] in offres:
+                offres[l["id"]]["requetes"] += " " + q["id"]
+            else:
+                l["requetes"] = q["id"]
+                offres[l["id"]] = l
+        for f in fac:
+            for a in f.get("agregation", []) or []:
+                facettes.append({"requete_id": q["id"], "filtre": f.get("filtre"),
+                                 "valeur": a.get("valeurPossible"), "nb": a.get("nbResultats")})
+        log.append({"date": date, "heure_utc": heure, "canal": "France Travail (API Offres d'emploi v2)",
+                    "requete_id": q["id"], "requete": q["libelle"],
+                    "parametres": json.dumps(q["params"], ensure_ascii=False), "total_annonce": total,
+                    "recuperees": len(res), "limites": q["limites"]})
+        print(f"{q['id']}: {total} annoncées, {len(res)} récupérées")
+        time.sleep(0.5)
+
+
+def collecte_lba(date, heure, offres, log):
+    jobs, recs = recherche_lba()
+    for j in jobs:
+        if (j.get("offer") or {}).get("status", "Active") != "Active":
+            continue
+        l = ligne_lba(j, date)
+        l["requetes"] = "lba_m1705"
+        offres.setdefault(l["id"], l)
+    params = json.dumps({"romes": config.LBA_ROMES})
+    log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API offres)",
+                "requete_id": "lba_m1705", "requete": "Offres en alternance, code ROME M1705",
+                "parametres": params, "total_annonce": len(jobs), "recuperees": len(jobs),
+                "limites": config.LBA_LIMITES})
+    log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API recruteurs)",
+                "requete_id": "lba_recruteurs", "requete": "Entreprises susceptibles de recruter, M1705",
+                "parametres": params, "total_annonce": len(recs), "recuperees": len(recs),
+                "limites": config.LBA_LIMITES})
+    print(f"lba: {len(jobs)} offres, {len(recs)} recruteurs")
+    return [ligne_recruteur(r, date) for r in recs]
+
+
 def main():
     maintenant = dt.datetime.now(dt.timezone.utc)
     date, heure = maintenant.strftime("%Y-%m-%d"), maintenant.strftime("%H:%M")
-    dossier = os.path.join(DATA, date)
-    os.makedirs(dossier, exist_ok=True)
-    offres, facettes, recruteurs, log = {}, [], [], []
+    offres, facettes, recruteurs, log, erreurs = {}, [], [], [], []
 
-    if os.environ.get("FT_CLIENT_ID"):
-        tok = token_ft()
-        for q in config.REQUETES_FT:
-            total, res, fac = recherche_ft(tok, q["params"], q["detail"])
-            for o in res:
-                l = ligne_ft(o, date)
-                if l["id"] in offres:
-                    offres[l["id"]]["requetes"] += " " + q["id"]
-                else:
-                    l["requetes"] = q["id"]
-                    offres[l["id"]] = l
-            for f in fac:
-                for a in f.get("agregation", []) or []:
-                    facettes.append({"requete_id": q["id"], "filtre": f.get("filtre"),
-                                     "valeur": a.get("valeurPossible"), "nb": a.get("nbResultats")})
-            log.append({"date": date, "heure_utc": heure, "canal": "France Travail (API Offres d'emploi v2)",
-                        "requete_id": q["id"], "requete": q["libelle"],
-                        "parametres": json.dumps(q["params"], ensure_ascii=False), "total_annonce": total,
-                        "recuperees": len(res), "limites": q["limites"]})
-            print(f"{q['id']}: {total} annoncées, {len(res)} récupérées")
-            time.sleep(0.5)
+    if secret("FT_CLIENT_ID"):
+        try:
+            collecte_ft(date, heure, offres, facettes, log)
+        except Exception as e:   # une source en panne n'empêche pas l'autre
+            erreurs.append(f"France Travail : {e}")
     else:
         print("FT_CLIENT_ID absent : France Travail ignoré")
 
-    if os.environ.get("LBA_TOKEN"):
-        jobs, recs = recherche_lba()
-        for j in jobs:
-            if (j.get("offer") or {}).get("status", "Active") != "Active":
-                continue
-            l = ligne_lba(j, date)
-            l["requetes"] = "lba_m1705"
-            offres.setdefault(l["id"], l)
-        recruteurs = [ligne_recruteur(r, date) for r in recs]
-        params = json.dumps({"romes": config.LBA_ROMES})
-        log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API offres)",
-                    "requete_id": "lba_m1705", "requete": "Offres en alternance, code ROME M1705",
-                    "parametres": params, "total_annonce": len(jobs), "recuperees": len(jobs),
-                    "limites": config.LBA_LIMITES})
-        log.append({"date": date, "heure_utc": heure, "canal": "La Bonne Alternance (API recruteurs)",
-                    "requete_id": "lba_recruteurs", "requete": "Entreprises susceptibles de recruter, M1705",
-                    "parametres": params, "total_annonce": len(recs), "recuperees": len(recs),
-                    "limites": config.LBA_LIMITES})
-        print(f"lba: {len(jobs)} offres, {len(recs)} recruteurs")
+    if secret("LBA_TOKEN"):
+        try:
+            recruteurs = collecte_lba(date, heure, offres, log)
+        except Exception as e:
+            erreurs.append(f"La Bonne Alternance : {e}")
     else:
         print("LBA_TOKEN absent : La Bonne Alternance ignorée")
 
+    for err in erreurs:
+        print("ERREUR", err)
     if not log:
-        print("Aucun secret configuré : rien à collecter.")
-        return
+        print("Aucune source n'a répondu : rien n'est enregistré.")
+        sys.exit(1 if erreurs else 0)
+    dossier = os.path.join(DATA, date)
+    os.makedirs(dossier, exist_ok=True)
     ecrire_csv(os.path.join(dossier, "offres.csv"), list(offres.values()), OFFRES_COLS)
     ecrire_csv(os.path.join(dossier, "facettes_ft.csv"), facettes, ["requete_id", "filtre", "valeur", "nb"])
     ecrire_csv(os.path.join(dossier, "recruteurs_lba.csv"), recruteurs,
                ["date_extraction", "entreprise", "siret", "departement", "commune", "naf", "secteur", "taille", "url"])
     journal(log)
     print(f"Extraction du {date} : {len(offres)} offres uniques enregistrées dans {dossier}")
+    if erreurs:
+        print("::warning::Extraction partielle : " + " / ".join(erreurs))
 
 
 if __name__ == "__main__":
