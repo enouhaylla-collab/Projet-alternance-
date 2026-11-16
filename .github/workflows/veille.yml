@@ -1,0 +1,35 @@
+name: Veille quotidienne
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # chaque jour vers 7 h 17, heure de Paris (6 h 17 UTC)
+  workflow_dispatch:        # bouton « Run workflow » pour lancer une extraction à la main
+
+permissions:
+  contents: write
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+      - name: Collecter les offres (France Travail, La Bonne Alternance)
+        env:
+          FT_CLIENT_ID: ${{ secrets.FT_CLIENT_ID }}
+          FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET }}
+          LBA_TOKEN: ${{ secrets.LBA_TOKEN }}
+        run: python scripts/collect.py
+      - name: Analyser et mettre à jour le site
+        run: python scripts/analyse.py
+      - name: Enregistrer l'extraction dans le dépôt
+        run: |
+          git config user.name "veille-automatique"
+          git config user.email "actions@users.noreply.github.com"
+          git add data docs/data
+          git diff --cached --quiet || git commit -m "Veille du $(date -u +%Y-%m-%d)"
+          git push

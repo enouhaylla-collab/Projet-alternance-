@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Méthode · Enquête métier Chargé·e CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head><body data-page="methode"><main>
+
+<p class="kicker">Partie 7</p>
+<h1>Comment le site est fait</h1>
+<p class="lead">Tout ce qui est compté ici est reproductible : les requêtes, les scripts et les données datées sont dans le dépôt GitHub.</p>
+<div id="journal"></div>
+<div class="grid g2">
+<div class="card"><h3>Les canaux branchés</h3><ul>
+<li><b>France Travail · API Offres d'emploi v2</b> : authentification OAuth2, 150 offres par page, 1 150 au maximum par requête.</li>
+<li><b>La Bonne Alternance · API offres et recruteurs</b> : offres d'alternance et entreprises susceptibles de recruter (marché caché).</li>
+<li>Aucune donnée de LinkedIn, de l'APEC ni d'Indeed : pas de scraping.</li></ul></div>
+<div class="card"><h3>Les scripts</h3><ul>
+<li><code>scripts/config.py</code> : métier, requêtes, variantes d'intitulé, dictionnaire de compétences.</li>
+<li><code>scripts/collect.py</code> : appelle les API et écrit <code>data/AAAA-MM-JJ/*.csv</code> + le journal <code>data/extractions.csv</code>.</li>
+<li><code>scripts/analyse.py</code> : lit toutes les extractions et produit <code>docs/data/stats.json</code>, affiché par ces pages.</li></ul></div>
+<div class="card"><h3>L'automatisation</h3><p>Un workflow GitHub Actions (<code>.github/workflows/veille.yml</code>) lance la collecte puis l'analyse chaque matin, et enregistre les nouvelles données dans le dépôt. Le site, publié avec GitHub Pages, affiche donc toujours la dernière extraction. Les clés d'API sont stockées dans les secrets du dépôt, jamais dans le code.</p></div>
+<div class="card"><h3>La règle RGPD pour les contacts</h3><p>Les scripts ne collectent <b>aucune donnée personnelle</b> : seulement des offres et des entreprises (personnes morales). Les professionnels cités le sont par leur fonction et leur entreprise, pour la finalité de cette enquête ; leur nom n'apparaît qu'avec leur accord, et je le retire sur simple demande. Aucun contact n'est réutilisé à d'autres fins.</p></div>
+</div>
+<h2>Les données</h2>
+<div class="card"><p>Les extractions datées (CSV) sont dans le dossier <a href="https://github.com/enouhaylla-collab/projet-alternance-/tree/main/data"><code>data/</code> du dépôt</a> : une ligne par offre, une ligne par requête dans le journal, avec la date, le canal, les paramètres et les limites. Le README du dépôt détaille la méthode.</p></div>
+
+</main><script src="assets/app.js"></script></body></html>

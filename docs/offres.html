@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les offres · Enquête métier Chargé·e CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head><body data-page="offres"><main>
+
+<p class="kicker">Partie 2</p>
+<h1>Ce que disent les offres</h1>
+<p class="lead">Chaque chiffre de cette page est accompagné de sa requête, de sa date, de son canal et de ses limites. Plusieurs extractions datées permettent de voir le marché bouger.</p>
+<div id="donnees"></div>
+<h2>Le marché dans le temps</h2>
+<div class="card"><div class="chart"><canvas id="serie"></canvas></div><div id="serie-src"></div></div>
+<h2>Journal des extractions</h2>
+<div class="card" id="journal" style="overflow-x:auto"></div>
+<h2>Géographie</h2>
+<div class="grid g2"><div class="card"><h3>Par région</h3><div id="geo"></div></div><div class="card"><h3>Par département</h3><div id="deps"></div></div></div>
+<h2>Contrats et alternance</h2>
+<div class="card" id="contrats"></div>
+<h2>Expérience demandée et taille d'entreprise</h2>
+<div class="grid g2"><div class="card"><h3>Expérience</h3><div id="experience"></div></div><div class="card"><h3>Taille de l'établissement</h3><div id="tailles"></div></div></div>
+<h2>Salaires affichés</h2>
+<div class="card" id="salaires"></div>
+
+</main><script src="assets/app.js"></script></body></html>
