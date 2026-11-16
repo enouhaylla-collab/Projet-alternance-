@@ -1,9 +1,1636 @@
 {
  "metier": "Chargé·e CRM / marketing automation",
  "rome": "M1705",
- "genere_le": "2026-11-16 15:42 UTC",
- "dates": [],
- "extractions": [],
- "sources": {},
- "vide": true
+ "genere_le": "2026-11-16 18:53 UTC",
+ "dates": [
+  "2026-11-16"
+ ],
+ "extractions": [
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_automation",
+   "requete": "Mots-clés « marketing automation », France entière",
+   "parametres": "{\"motsCles\": \"marketing automation\"}",
+   "total_annonce": "1",
+   "recuperees": "1",
+   "limites": "Mots recherchés dans tout le texte de l'offre ; volume faible, donc sensible aux variations."
+  },
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm",
+   "requete": "Mot-clé « CRM », France entière",
+   "parametres": "{\"motsCles\": \"CRM\"}",
+   "total_annonce": "274",
+   "recuperees": "274",
+   "limites": "Le mot « CRM » apparaît aussi dans des offres commerciales qui demandent seulement d'utiliser un logiciel CRM : le site distingue les offres dont l'intitulé désigne le métier."
+  },
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm_m1705",
+   "requete": "Mot-clé « CRM » dans le code ROME M1705",
+   "parametres": "{\"codeROME\": \"M1705\", \"motsCles\": \"CRM\"}",
+   "total_annonce": "0",
+   "recuperees": "0",
+   "limites": "Croisement le plus proche du métier ; exclut les offres CRM classées dans un autre code ROME."
+  },
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_rome_m1705",
+   "requete": "Code ROME M1705 (Marketing), France entière",
+   "parametres": "{\"codeROME\": \"M1705\"}",
+   "total_annonce": "193",
+   "recuperees": "0",
+   "limites": "Toutes les offres classées M1705 par France Travail, au-delà du seul CRM ; le classement ROME est fait par le recruteur ou le conseiller."
+  },
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "La Bonne Alternance (API offres)",
+   "requete_id": "lba_m1705",
+   "requete": "Offres en alternance, code ROME M1705",
+   "parametres": "{\"romes\": \"M1705\"}",
+   "total_annonce": "13",
+   "recuperees": "13",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705 ; les « recruteurs » sont des entreprises identifiées comme susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  },
+  {
+   "date": "2026-11-16",
+   "heure_utc": "18:53",
+   "canal": "La Bonne Alternance (API recruteurs)",
+   "requete_id": "lba_recruteurs",
+   "requete": "Entreprises susceptibles de recruter, M1705",
+   "parametres": "{\"romes\": \"M1705\"}",
+   "total_annonce": "150",
+   "recuperees": "150",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705 ; les « recruteurs » sont des entreprises identifiées comme susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  }
+ ],
+ "sources": {
+  "ft_automation": {
+   "requete": "Mots-clés « marketing automation », France entière",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "parametres": "{\"motsCles\": \"marketing automation\"}",
+   "limites": "Mots recherchés dans tout le texte de l'offre ; volume faible, donc sensible aux variations."
+  },
+  "ft_crm": {
+   "requete": "Mot-clé « CRM », France entière",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "parametres": "{\"motsCles\": \"CRM\"}",
+   "limites": "Le mot « CRM » apparaît aussi dans des offres commerciales qui demandent seulement d'utiliser un logiciel CRM : le site distingue les offres dont l'intitulé désigne le métier."
+  },
+  "ft_crm_m1705": {
+   "requete": "Mot-clé « CRM » dans le code ROME M1705",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "parametres": "{\"codeROME\": \"M1705\", \"motsCles\": \"CRM\"}",
+   "limites": "Croisement le plus proche du métier ; exclut les offres CRM classées dans un autre code ROME."
+  },
+  "ft_rome_m1705": {
+   "requete": "Code ROME M1705 (Marketing), France entière",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "parametres": "{\"codeROME\": \"M1705\"}",
+   "limites": "Toutes les offres classées M1705 par France Travail, au-delà du seul CRM ; le classement ROME est fait par le recruteur ou le conseiller."
+  },
+  "lba_m1705": {
+   "requete": "Offres en alternance, code ROME M1705",
+   "canal": "La Bonne Alternance (API offres)",
+   "parametres": "{\"romes\": \"M1705\"}",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705 ; les « recruteurs » sont des entreprises identifiées comme susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  },
+  "lba_recruteurs": {
+   "requete": "Entreprises susceptibles de recruter, M1705",
+   "canal": "La Bonne Alternance (API recruteurs)",
+   "parametres": "{\"romes\": \"M1705\"}",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705 ; les « recruteurs » sont des entreprises identifiées comme susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  }
+ },
+ "series": {
+  "ft_automation": [
+   {
+    "date": "2026-11-16",
+    "total": 1
+   }
+  ],
+  "ft_crm": [
+   {
+    "date": "2026-11-16",
+    "total": 274
+   }
+  ],
+  "ft_crm_m1705": [
+   {
+    "date": "2026-11-16",
+    "total": 0
+   }
+  ],
+  "ft_rome_m1705": [
+   {
+    "date": "2026-11-16",
+    "total": 193
+   }
+  ],
+  "lba_m1705": [
+   {
+    "date": "2026-11-16",
+    "total": 13
+   }
+  ],
+  "lba_recruteurs": [
+   {
+    "date": "2026-11-16",
+    "total": 150
+   }
+  ]
+ },
+ "derniere": "2026-11-16",
+ "comptes": {
+  "offres_uniques": 286,
+  "offres_metier": 74,
+  "offres_metier_ft": 74,
+  "offres_metier_lba": 0,
+  "alternance": 5
+ },
+ "variantes": [
+  {
+   "label": "Chargé·e CRM",
+   "n": 54
+  },
+  {
+   "label": "CRM manager / responsable CRM",
+   "n": 12
+  },
+  {
+   "label": "Marketing relationnel / fidélisation",
+   "n": 5
+  },
+  {
+   "label": "Emailing / marketing client",
+   "n": 2
+  },
+  {
+   "label": "Marketing automation",
+   "n": 1
+  }
+ ],
+ "intitules": [
+  {
+   "label": "Chef de Projet Solutions Clients et CRM Salesforce",
+   "n": 2
+  },
+  {
+   "label": "Alternance Marketing Relationnel & Data CRM - Paris",
+   "n": 2
+  },
+  {
+   "label": "CRM MANAGER SENIOR",
+   "n": 1
+  },
+  {
+   "label": "Expert CRM",
+   "n": 1
+  },
+  {
+   "label": "Alternance Assistant chef de projet Marketing Client & CRM",
+   "n": 1
+  },
+  {
+   "label": "Chargé de projet CRM et qualité des données",
+   "n": 1
+  },
+  {
+   "label": "Testeur Fonctionnel de Logiciels Marketing & CRM",
+   "n": 1
+  },
+  {
+   "label": "Chef de Projet IT Senior - CRM / Ventes & Marketing",
+   "n": 1
+  },
+  {
+   "label": "Gestionnaire d'applications CRM & Field Service 365 #SEB26",
+   "n": 1
+  },
+  {
+   "label": "Expert Technique Microsoft Dynamics 365 CRM & Power Platform - IA",
+   "n": 1
+  },
+  {
+   "label": "Chef de Projet Microsoft Dynamics 365 CRM & Power Platform -IA",
+   "n": 1
+  },
+  {
+   "label": "Responsable e-CRM electronic Customer Relationship Management",
+   "n": 1
+  },
+  {
+   "label": "Consultant Back-Office & CRM - Office Manager",
+   "n": 1
+  },
+  {
+   "label": "Chargé CRM",
+   "n": 1
+  },
+  {
+   "label": "Sales Specialist CRM - Microsoft Dynamics",
+   "n": 1
+  }
+ ],
+ "regions": [
+  {
+   "label": "Île-de-France",
+   "n": 52
+  },
+  {
+   "label": "Pays de la Loire",
+   "n": 6
+  },
+  {
+   "label": "Hauts-de-France",
+   "n": 4
+  },
+  {
+   "label": "Auvergne-Rhône-Alpes",
+   "n": 3
+  },
+  {
+   "label": "Normandie",
+   "n": 2
+  },
+  {
+   "label": "Nouvelle-Aquitaine",
+   "n": 2
+  },
+  {
+   "label": "Provence-Alpes-Côte d'Azur",
+   "n": 2
+  },
+  {
+   "label": "Bretagne",
+   "n": 1
+  },
+  {
+   "label": "Non renseignée",
+   "n": 1
+  },
+  {
+   "label": "Occitanie",
+   "n": 1
+  }
+ ],
+ "departements": [
+  {
+   "label": "75",
+   "n": 32
+  },
+  {
+   "label": "92",
+   "n": 11
+  },
+  {
+   "label": "94",
+   "n": 5
+  },
+  {
+   "label": "85",
+   "n": 2
+  },
+  {
+   "label": "59",
+   "n": 2
+  },
+  {
+   "label": "63",
+   "n": 2
+  },
+  {
+   "label": "33",
+   "n": 2
+  },
+  {
+   "label": "06",
+   "n": 2
+  },
+  {
+   "label": "44",
+   "n": 2
+  },
+  {
+   "label": "60",
+   "n": 2
+  },
+  {
+   "label": "91",
+   "n": 2
+  },
+  {
+   "label": "14",
+   "n": 1
+  }
+ ],
+ "contrats": [
+  {
+   "label": "CDI",
+   "n": 42
+  },
+  {
+   "label": "Profession libérale",
+   "n": 22
+  },
+  {
+   "label": "CDD - 12 Mois",
+   "n": 5
+  },
+  {
+   "label": "Intérim - 1 Mois",
+   "n": 2
+  },
+  {
+   "label": "CDD - 6 Mois",
+   "n": 1
+  },
+  {
+   "label": "Intérim - 4 Mois",
+   "n": 1
+  },
+  {
+   "label": "CDD - 4 Mois",
+   "n": 1
+  }
+ ],
+ "experience": [
+  {
+   "label": "Débutant accepté",
+   "n": 39
+  },
+  {
+   "label": "Expérience exigée",
+   "n": 35
+  }
+ ],
+ "tailles": [
+  {
+   "label": "Non renseignée",
+   "n": 50
+  },
+  {
+   "label": "3 à 5 salariés",
+   "n": 7
+  },
+  {
+   "label": "50 à 99 salariés",
+   "n": 4
+  },
+  {
+   "label": "20 à 49 salariés",
+   "n": 3
+  },
+  {
+   "label": "250 à 499 salariés",
+   "n": 3
+  },
+  {
+   "label": "100 à 199 salariés",
+   "n": 3
+  },
+  {
+   "label": "10 à 19 salariés",
+   "n": 2
+  },
+  {
+   "label": "6 à 9 salariés",
+   "n": 1
+  },
+  {
+   "label": "500 à 999 salariés",
+   "n": 1
+  }
+ ],
+ "salaires": {
+  "n_ft": 74,
+  "n_affiche": 52,
+  "part_affiche": 70.3,
+  "n_montants": 21,
+  "mediane_min_mensuel": 3750,
+  "min": 800,
+  "max": 7500,
+  "exemples": [
+   {
+    "label": "-  /",
+    "n": 10
+   },
+   {
+    "label": "Annuel de 50000.0 Euros à 60000.0 Euros",
+    "n": 6
+   },
+   {
+    "label": "Primes",
+    "n": 3
+   },
+   {
+    "label": "550 € par jour",
+    "n": 3
+   },
+   {
+    "label": "Annuel de 60000.0 Euros à 70000.0 Euros",
+    "n": 2
+   },
+   {
+    "label": "500 € par jour",
+    "n": 2
+   }
+  ]
+ },
+ "facettes": {},
+ "competences": [
+  {
+   "label": "Analyse de données / KPI",
+   "categorie": "Compétence",
+   "n": 56,
+   "part": 75.7,
+   "formation": "Partiel (expérience)",
+   "justification": "Simulation Forage : définition de KPI."
+  },
+  {
+   "label": "Gestion de projet",
+   "categorie": "Compétence",
+   "n": 38,
+   "part": 51.4,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "Marketing automation / scénarios",
+   "categorie": "Compétence",
+   "n": 30,
+   "part": 40.5,
+   "formation": "À compléter",
+   "justification": "Vérifier dans la maquette du Master 2 (UE marketing digital)."
+  },
+  {
+   "label": "Rédaction / contenus",
+   "categorie": "Compétence",
+   "n": 24,
+   "part": 32.4,
+   "formation": "Oui (expérience)",
+   "justification": "Office National des Pêches : contenus Instagram et LinkedIn."
+  },
+  {
+   "label": "Microsoft Dynamics",
+   "categorie": "Outil",
+   "n": 21,
+   "part": 28.4,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "Excel",
+   "categorie": "Outil",
+   "n": 20,
+   "part": 27.0,
+   "formation": "Oui (CV)",
+   "justification": ""
+  },
+  {
+   "label": "Anglais",
+   "categorie": "Compétence",
+   "n": 19,
+   "part": 25.7,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "SQL",
+   "categorie": "Outil",
+   "n": 19,
+   "part": 25.7,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "Salesforce",
+   "categorie": "Outil",
+   "n": 18,
+   "part": 24.3,
+   "formation": "Non",
+   "justification": "Aucun cours ni expérience à ce jour."
+  },
+  {
+   "label": "Segmentation / ciblage",
+   "categorie": "Compétence",
+   "n": 16,
+   "part": 21.6,
+   "formation": "Oui (expérience)",
+   "justification": "Simulation Forage : segmentation des cibles. À croiser avec la maquette du Master."
+  },
+  {
+   "label": "Lead scoring / génération de leads",
+   "categorie": "Compétence",
+   "n": 16,
+   "part": 21.6,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "RGPD / qualité de la base",
+   "categorie": "Compétence",
+   "n": 15,
+   "part": 20.3,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "Fidélisation / rétention",
+   "categorie": "Compétence",
+   "n": 12,
+   "part": 16.2,
+   "formation": "À compléter",
+   "justification": "Vérifier dans la maquette du Master 2."
+  },
+  {
+   "label": "Intelligence artificielle",
+   "categorie": "Compétence",
+   "n": 12,
+   "part": 16.2,
+   "formation": "Partiel (autoformation)",
+   "justification": "Usage de Claude IA (CV)."
+  },
+  {
+   "label": "Parcours client",
+   "categorie": "Compétence",
+   "n": 11,
+   "part": 14.9,
+   "formation": "À compléter",
+   "justification": "Vérifier dans la maquette du Master 2."
+  },
+  {
+   "label": "Emailing / campagnes e-mail",
+   "categorie": "Compétence",
+   "n": 8,
+   "part": 10.8,
+   "formation": "Oui (expérience)",
+   "justification": "Simulation Forage : emailings et lettre d'information."
+  },
+  {
+   "label": "Power BI / Looker / Tableau",
+   "categorie": "Outil",
+   "n": 4,
+   "part": 5.4,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "HubSpot",
+   "categorie": "Outil",
+   "n": 3,
+   "part": 4.1,
+   "formation": "Oui (certification)",
+   "justification": "Certification Inbound Marketing HubSpot Academy."
+  },
+  {
+   "label": "Mailchimp / Klaviyo",
+   "categorie": "Outil",
+   "n": 2,
+   "part": 2.7,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "A/B testing",
+   "categorie": "Compétence",
+   "n": 1,
+   "part": 1.4,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "Brevo (Sendinblue)",
+   "categorie": "Outil",
+   "n": 1,
+   "part": 1.4,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "Selligent / Actito / Splio",
+   "categorie": "Outil",
+   "n": 1,
+   "part": 1.4,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "Adobe Campaign",
+   "categorie": "Outil",
+   "n": 1,
+   "part": 1.4,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "Google Analytics",
+   "categorie": "Outil",
+   "n": 0,
+   "part": 0.0,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
+   "label": "Canva / suite Adobe",
+   "categorie": "Outil",
+   "n": 0,
+   "part": 0.0,
+   "formation": "Oui (CV)",
+   "justification": "Photoshop, Illustrator, InDesign, Canva."
+  }
+ ],
+ "competences_ft": [
+  {
+   "label": "Techniques de communication orales, écrites et numériques",
+   "n": 5
+  },
+  {
+   "label": "Recueillir l'avis et les remarques d'un client",
+   "n": 5
+  },
+  {
+   "label": "Traiter les demandes de support technique",
+   "n": 5
+  },
+  {
+   "label": "Analyse de données expérimentales",
+   "n": 4
+  },
+  {
+   "label": "Analyser, exploiter, structurer des données",
+   "n": 2
+  },
+  {
+   "label": "Créer une documentation technique",
+   "n": 2
+  },
+  {
+   "label": "Tester un logiciel, un système d'informations, une application",
+   "n": 2
+  },
+  {
+   "label": "Développer un portefeuille clients et prospects",
+   "n": 2
+  },
+  {
+   "label": "Elaborer une stratégie commerciale",
+   "n": 2
+  },
+  {
+   "label": "Proposer des améliorations pour optimiser les processus",
+   "n": 1
+  },
+  {
+   "label": "Optimisation de bases de données",
+   "n": 1
+  },
+  {
+   "label": "Outils multimédias",
+   "n": 1
+  }
+ ],
+ "entreprises": [
+  {
+   "label": "Collective.work",
+   "n": 25
+  },
+  {
+   "label": "MASAO",
+   "n": 3
+  },
+  {
+   "label": "GECO RECRUTEMENT",
+   "n": 2
+  },
+  {
+   "label": "ADSEARCH",
+   "n": 2
+  },
+  {
+   "label": "IONIS Group",
+   "n": 2
+  },
+  {
+   "label": "OLYN",
+   "n": 1
+  },
+  {
+   "label": "E-KENT",
+   "n": 1
+  },
+  {
+   "label": "THOM",
+   "n": 1
+  },
+  {
+   "label": "CAEN NORMANDIE DEVELOPPEMENT",
+   "n": 1
+  },
+  {
+   "label": "CIORANE",
+   "n": 1
+  },
+  {
+   "label": "K. LINE",
+   "n": 1
+  },
+  {
+   "label": "GROUPE PARTNAIRE",
+   "n": 1
+  },
+  {
+   "label": "VESPER PORTAGE",
+   "n": 1
+  },
+  {
+   "label": "STUDYRAMA",
+   "n": 1
+  },
+  {
+   "label": "DOMES PHARMA",
+   "n": 1
+  },
+  {
+   "label": "Standard Ecom",
+   "n": 1
+  },
+  {
+   "label": "MOSS",
+   "n": 1
+  },
+  {
+   "label": "Domino RH",
+   "n": 1
+  },
+  {
+   "label": "Emeria",
+   "n": 1
+  },
+  {
+   "label": "Club Med",
+   "n": 1
+  }
+ ],
+ "marche_cache": {
+  "n_recruteurs": 150,
+  "n_sans_offre": 150,
+  "liste": [
+   {
+    "entreprise": "CEREZUELA",
+    "commune": "CAROMB",
+    "secteur": "Autres travaux de finition",
+    "taille": "6-9",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/41306004700029/cerezuela"
+   },
+   {
+    "entreprise": "APPOLONIA",
+    "commune": "ANTIBES",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/43894390400039/appolonia"
+   },
+   {
+    "entreprise": "INNOVATION&TRUST FRANCE",
+    "commune": "BOULOGNE-BILLANCOURT",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/35216453700107/innovation-trust-france"
+   },
+   {
+    "entreprise": "BPCE ASSURANCES PRODUCTION SERVICES",
+    "commune": "DIJON",
+    "secteur": "Autres activités auxiliaires d'assurance et de caisses de retraite",
+    "taille": "50-99",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/50163327500109/bpce-assurances-production-services"
+   },
+   {
+    "entreprise": "HANNOVER RUCK SE SUCCURSALE FRANCAISE",
+    "commune": "PARIS",
+    "secteur": "Réassurance",
+    "taille": "50-99",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/45142868400059/hannover-ruck-se-succursale-francaise"
+   },
+   {
+    "entreprise": "INTERSAV",
+    "commune": "TOURNAN-EN-BRIE",
+    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+    "taille": "100-199",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/34191179000085/bsh-electromenager"
+   },
+   {
+    "entreprise": "RENOV'HABITAT",
+    "commune": "VAUX-LE-PENIL",
+    "secteur": "Autres travaux de finition",
+    "taille": "6-9",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/42376996700021/renov-habitat"
+   },
+   {
+    "entreprise": "SOCIETE D'EDITION DE CANAL PLUS",
+    "commune": "PARIS",
+    "secteur": "Edition de chaînes généralistes",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/32921173400341/societe-d-edition-de-canal-plus"
+   },
+   {
+    "entreprise": "STIEBEL ELTRON",
+    "commune": "METZ",
+    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+    "taille": "50-99",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/44517640700010/stiebel-eltron"
+   },
+   {
+    "entreprise": "NEMETSCHEK FRANCE",
+    "commune": "PUTEAUX",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/38855590600105/nemetschek-france"
+   },
+   {
+    "entreprise": "IPARLA BAIGURA KOMUNIKAZIOA",
+    "commune": "URRUGNE",
+    "secteur": "Activités des agences de presse",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/49485486200047/iparla-baigura-komunikazioa"
+   },
+   {
+    "entreprise": "SET SAS SOC EUROPEENNE TECHNICO INDUSTRI",
+    "commune": "TAVERNY",
+    "secteur": "Fabrication d'autres outillages",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/47956654900024/set-sas-soc-europeenne-technico-industri"
+   },
+   {
+    "entreprise": "CIDS",
+    "commune": "LE MUY",
+    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/40256862000031/cids"
+   },
+   {
+    "entreprise": "SARL PRO RENOV",
+    "commune": "AURILLAC",
+    "secteur": "Autres travaux de finition",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/50959172300010/sarl-pro-renov"
+   },
+   {
+    "entreprise": "SACRES COUPONS",
+    "commune": "PARIS",
+    "secteur": "Commerce de gros (commerce interentreprises) de textiles",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/32775579900019/aux-sacres-coupons"
+   },
+   {
+    "entreprise": "OPULL'ENCE",
+    "commune": "PARIS",
+    "secteur": "Commerce de gros (commerce interentreprises) de textiles",
+    "taille": "1-2",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/42146948700027/opull-ence"
+   },
+   {
+    "entreprise": "ENTREPRISE GEOFFRIAUD",
+    "commune": "DOMPIERRE-SUR-MER",
+    "secteur": "Autres travaux de finition",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/34872607600030/entreprise-geoffriaud"
+   },
+   {
+    "entreprise": "OALIA",
+    "commune": "SURESNES",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/43331084400041/oalia"
+   },
+   {
+    "entreprise": "ENTREPRISE JULES CHALMEL",
+    "commune": "RENNES",
+    "secteur": "Autres travaux de finition",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/31862241200043/entreprise-jules-chalmel"
+   },
+   {
+    "entreprise": "LA DEPECHE NEWS",
+    "commune": "TOULOUSE",
+    "secteur": "Activités des agences de presse",
+    "taille": "100-199",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/44112119100015/la-depeche-news"
+   },
+   {
+    "entreprise": "LG ELECTRONICS FRANCE",
+    "commune": "COURBEVOIE",
+    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+    "taille": "250-499",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/38013056700106/lg-electronics-france"
+   },
+   {
+    "entreprise": "WALLIX",
+    "commune": "PARIS",
+    "secteur": "Édition de logiciels système et de réseau",
+    "taille": "50-99",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/45040115300058/wallix"
+   },
+   {
+    "entreprise": "SARL LES MORELLES",
+    "commune": "POLLIAT",
+    "secteur": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/33529239700015/sarl-les-morelles"
+   },
+   {
+    "entreprise": "LEFEBVRE TEXTILE",
+    "commune": "SECLIN",
+    "secteur": "Commerce de gros (commerce interentreprises) de textiles",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/46950256100506/lefebvre-textile"
+   },
+   {
+    "entreprise": "MOREL DIFFUSION",
+    "commune": "FREJUS",
+    "secteur": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/39232984300016/morel-diffusion"
+   },
+   {
+    "entreprise": "SOFTEAM",
+    "commune": "SAINT-HERBLAIN",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "50-99",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/49324189700120/softeam"
+   },
+   {
+    "entreprise": "DAXIUM",
+    "commune": "NANTES",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/48149646100056/daxium"
+   },
+   {
+    "entreprise": "SLE 73",
+    "commune": "BARBERAZ",
+    "secteur": "Autres travaux de finition",
+    "taille": "10-19",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/39962561500022/sle-73"
+   },
+   {
+    "entreprise": "BEETWEEN",
+    "commune": "RENNES",
+    "secteur": "Edition de logiciels applicatifs",
+    "taille": "20-49",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/49862001200027/beetween"
+   },
+   {
+    "entreprise": "GROUPAMA GAN VIE",
+    "commune": "PARIS",
+    "secteur": "Assurance vie",
+    "taille": "6-9",
+    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/34042761602178/groupama-gan-vie"
+   }
+  ],
+  "secteurs": [
+   {
+    "label": "Edition de logiciels applicatifs",
+    "n": 43
+   },
+   {
+    "label": "Autres travaux de finition",
+    "n": 16
+   },
+   {
+    "label": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+    "n": 14
+   },
+   {
+    "label": "Assurance vie",
+    "n": 12
+   },
+   {
+    "label": "Édition de livres",
+    "n": 12
+   },
+   {
+    "label": "Fabrication d'autres outillages",
+    "n": 11
+   },
+   {
+    "label": "Commerce de gros (commerce interentreprises) de textiles",
+    "n": 10
+   },
+   {
+    "label": "Édition de logiciels système et de réseau",
+    "n": 9
+   }
+  ]
+ },
+ "veille": [
+  {
+   "date_publication": "2026-11-14",
+   "intitule": "Développeur Microsoft Dynamics 365 CRM (F/H) - Freelance",
+   "entreprise": "Collective.work",
+   "commune": "94 - Villejuif",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8848521"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Expert CRM (H/F)",
+   "entreprise": "E-KENT",
+   "commune": "92 - Antony",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/216KQCK"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Alternance DATA ANALYST CRM & BUSINESS INTELLIGENCE - Guyancourt (F/H)",
+   "entreprise": "",
+   "commune": "78 - Guyancourt",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8813600"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Développeur Microsoft Dynamics CRM - Freelance - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8797889"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Business Analyst Microsoft Dynamics CRM - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "94 - Gentilly",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8797845"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Business Analyst Microsoft Dynamics CRM - Freelance - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8797821"
+  },
+  {
+   "date_publication": "2026-11-13",
+   "intitule": "Développeur Microsoft Dynamics CRM expérimenté - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "94 - Vitry-sur-Seine",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8797800"
+  },
+  {
+   "date_publication": "2026-11-12",
+   "intitule": "Alternance Assistant chef de projet Marketing Client & CRM (H/F)",
+   "entreprise": "THOM",
+   "commune": "75 - Paris",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/216HZKL"
+  },
+  {
+   "date_publication": "2026-11-12",
+   "intitule": "Data Manager CRM & Flux H/F",
+   "entreprise": "",
+   "commune": "92 - Courbevoie",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8765318"
+  },
+  {
+   "date_publication": "2026-11-12",
+   "intitule": "Consultant CRM H/F",
+   "entreprise": "",
+   "commune": "35 - Rennes",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8765026"
+  },
+  {
+   "date_publication": "2026-11-12",
+   "intitule": "CRM Manager / CDI / Full Remote (H/F)",
+   "entreprise": "Standard Ecom",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8753917"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "STAGE - Chargé(e) de projet CRM / fiabilisation data IA F/H",
+   "entreprise": "MOSS",
+   "commune": "92 - Issy-les-Moulineaux",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8750946"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Expert Technico-Fonctionnel CRM Microsoft Dynamics (F/H) - Freelance",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8744526"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Chef de projet CRM (Pharma) - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8744495"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Product Manager CRM International  - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8744460"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Product Manager Senior - Intelligent CRM & Client Centricity - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8744453"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Chef de Projet Solutions Clients et CRM Salesforce (H/F)",
+   "entreprise": "GECO RECRUTEMENT",
+   "commune": "33 - Bordeaux",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8725133"
+  },
+  {
+   "date_publication": "2026-11-11",
+   "intitule": "Consultant Solutions ERP et CRM pour PME (H/F)",
+   "entreprise": "Domino RH",
+   "commune": "76 - Rouen",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8723428"
+  },
+  {
+   "date_publication": "2026-11-10",
+   "intitule": "Responsable Produit CRM (H/F)",
+   "entreprise": "Emeria",
+   "commune": "92 - Courbevoie",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8687273"
+  },
+  {
+   "date_publication": "2026-11-09",
+   "intitule": "CRM MANAGER SENIOR (H/F)",
+   "entreprise": "OLYN",
+   "commune": "75 - Paris 17e Arrondissement",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/216GGFQ"
+  },
+  {
+   "date_publication": "2026-11-08",
+   "intitule": "Directeur de la Relation Client et CRM (H/F)",
+   "entreprise": "Club Med",
+   "commune": "Île-de-France",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8650857"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "CRM & Business Intelligence Officer F/H",
+   "entreprise": "",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8642678"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "Data Analyst CRM - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "92 - Issy-les-Moulineaux",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8637199"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "AMOA/BA CRM Microsoft Dynamics - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8637012"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "Responsable CRM H/F",
+   "entreprise": "ADSEARCH",
+   "commune": "06 - Saint-Laurent-du-Var",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8636215"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "Responsable CRM & SI H/F",
+   "entreprise": "ADSEARCH",
+   "commune": "06 - Saint-Laurent-du-Var",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8636147"
+  },
+  {
+   "date_publication": "2026-11-07",
+   "intitule": "Assistant d'affaires CRM et Administration Commerciale (H/F)",
+   "entreprise": "INTERACTION",
+   "commune": "72 - Mans",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8630915"
+  },
+  {
+   "date_publication": "2026-11-06",
+   "intitule": "Chargé(e) de projet CRM et qualité des données (H/F)",
+   "entreprise": "CAEN NORMANDIE DEVELOPPEMENT",
+   "commune": "14 - CAEN",
+   "contrat": "CDD - 6 Mois",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/216DMYR"
+  },
+  {
+   "date_publication": "2026-11-06",
+   "intitule": "Assistant chargé de projet CRM - STAGE - F/H",
+   "entreprise": "Maisons du Monde",
+   "commune": "44 - Vertou",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8626139"
+  },
+  {
+   "date_publication": "2026-11-06",
+   "intitule": "Chef de projet Rétention et Réabonnement (H/F)",
+   "entreprise": "Le Figaro",
+   "commune": "75 - Paris 9e Arrondissement",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8622073"
+  },
+  {
+   "date_publication": "2026-11-05",
+   "intitule": "Product Manager senior - IA et data client dans le CRM, services financiers - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8577112"
+  },
+  {
+   "date_publication": "2026-11-05",
+   "intitule": "Responsable CRM Salesforce - CDI (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8577102"
+  },
+  {
+   "date_publication": "2026-11-05",
+   "intitule": "Support Engineer CRM Salesforce Marketing Cloud - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "59 - Lille",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8577094"
+  },
+  {
+   "date_publication": "2026-11-05",
+   "intitule": "Développeur CRM Dynamics - Secteur Banque - CDI (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "94 - Villejuif",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8576946"
+  },
+  {
+   "date_publication": "2026-11-05",
+   "intitule": "Product Manager - CRM des équipes commerciales, services financiers - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8576848"
+  },
+  {
+   "date_publication": "2026-11-04",
+   "intitule": "CRM & Marketing Automation Specialist F/H - IONIS Group",
+   "entreprise": "IONIS Group",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8553135"
+  },
+  {
+   "date_publication": "2026-11-04",
+   "intitule": "Chef de projet technique CRM Salesforce F/H - IONIS Group",
+   "entreprise": "IONIS Group",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8553087"
+  },
+  {
+   "date_publication": "2026-11-04",
+   "intitule": "RESPONSABLE CRM - H/F",
+   "entreprise": "BALIBARIS",
+   "commune": "75 - Paris 6e Arrondissement",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8552568"
+  },
+  {
+   "date_publication": "2026-11-04",
+   "intitule": "Chef de Projet CRM (H/F)",
+   "entreprise": "FOKUS",
+   "commune": "69 - Lyon 3e Arrondissement",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8544127"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Alternance Marketing Relationnel & Data CRM - Paris (F/H)",
+   "entreprise": "",
+   "commune": "75 - Paris",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8514592"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Alternance Marketing Relationnel & Data CRM - Paris (H/F)",
+   "entreprise": "ISCOD",
+   "commune": "75 - Paris 17e Arrondissement",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8510913"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Luxe - Proxy Product Owner CRM et IA appliquée au clienteling - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8510383"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Chef de projet deploiement CRM - Salesforce (H/F) - Freelance",
+   "entreprise": "Collective.work",
+   "commune": "31 - Toulouse",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8510341"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Business Analyst CRM Veeva - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "92 - Suresnes",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8510317"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Administrateur crm f/h (H/F)",
+   "entreprise": "",
+   "commune": "60 - Saint-Crépin-Ibouvillers",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8508986"
+  },
+  {
+   "date_publication": "2026-11-03",
+   "intitule": "Directeur de projet CRM Salesforce (H/F)",
+   "entreprise": "Teamis",
+   "commune": "75 - Paris 9e Arrondissement",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8486745"
+  },
+  {
+   "date_publication": "2026-11-01",
+   "intitule": "Testeur Fonctionnel de Logiciels Marketing & CRM (H/F)",
+   "entreprise": "",
+   "commune": "92 - ISSY LES MOULINEAUX",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215XBVD"
+  },
+  {
+   "date_publication": "2026-10-31",
+   "intitule": "Consultant CRM & emailing senior - Adobe campaign classic V8 - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8443822"
+  },
+  {
+   "date_publication": "2026-10-30",
+   "intitule": "Développeur Microsoft Dynamics CRM - Sénior - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8415192"
+  },
+  {
+   "date_publication": "2026-10-30",
+   "intitule": "CRM Manager Senior - Freelance (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "Profession libérale",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8415177"
+  },
+  {
+   "date_publication": "2026-10-29",
+   "intitule": "Chef de Projet IT Senior - CRM / Ventes & Marketing (H/F)",
+   "entreprise": "CIORANE",
+   "commune": "92 - Levallois-Perret",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215VDVH"
+  },
+  {
+   "date_publication": "2026-10-29",
+   "intitule": "Gestionnaire d'applications CRM & Field Service 365 (H/F) #SEB26",
+   "entreprise": "K. LINE",
+   "commune": "85 - LES HERBIERS",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215VBQB"
+  },
+  {
+   "date_publication": "2026-10-28",
+   "intitule": "Expert Technique Microsoft Dynamics 365 CRM & Power Platform - IA (H/F)",
+   "entreprise": "MASAO",
+   "commune": "75 - PARIS",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215SZZM"
+  },
+  {
+   "date_publication": "2026-10-28",
+   "intitule": "Chef de Projet Microsoft Dynamics 365 CRM & Power Platform -IA (H/F)",
+   "entreprise": "MASAO",
+   "commune": "75 - PARIS",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215SZDT"
+  },
+  {
+   "date_publication": "2026-10-28",
+   "intitule": "Responsable e-CRM electronic Customer Relationship Management (H/F)",
+   "entreprise": "GROUPE PARTNAIRE",
+   "commune": "59 - Loos",
+   "contrat": "Intérim - 4 Mois",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215SVNK"
+  },
+  {
+   "date_publication": "2026-10-25",
+   "intitule": "Responsable relation client (CRM) (H/F)",
+   "entreprise": "SMCP",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8253268"
+  },
+  {
+   "date_publication": "2026-10-23",
+   "intitule": "Chef de projet CRM - AMOA - H/F",
+   "entreprise": "Externatic",
+   "commune": "44 - Vertou",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8225939"
+  },
+  {
+   "date_publication": "2026-10-23",
+   "intitule": "CDI - Chef de Projet / Delivery Manager SI (ERP ou CRM ou SIRH) - Partner - Pari - CDI (H/F)",
+   "entreprise": "Collective.work",
+   "commune": "75 - Paris",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8193105"
+  },
+  {
+   "date_publication": "2026-10-22",
+   "intitule": "Customer Relationship Manager (CRM) (13877) (H/F)",
+   "entreprise": "Vilmorin-Mikado",
+   "commune": "49 - Ménitré",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8159931"
+  },
+  {
+   "date_publication": "2026-10-21",
+   "intitule": "Consultant(e) Back-Office & CRM - Office Manager (H/F)",
+   "entreprise": "VESPER PORTAGE",
+   "commune": "94 - ST MAUR DES FOSSES",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/215MVJL"
+  }
+ ]
 }
