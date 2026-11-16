@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
 </head><body data-page="offres"><main>
 
 <p class="kicker">Partie 2</p>
@@ -13,6 +13,11 @@
 <div id="donnees"></div>
 <h2>Le marché dans le temps</h2>
 <div class="card"><div class="chart"><canvas id="serie"></canvas></div><div id="serie-src"></div></div>
+<h2>Depuis mi-octobre : les offres par semaine de publication</h2>
+<p>La veille automatique tourne depuis le 16 novembre 2026. Pour remonter plus loin, j'utilise la date de publication de chaque offre encore en ligne au moment de l'extraction.</p>
+<div class="grid g2"><div class="card"><h3>Offres du métier</h3><div class="chart"><canvas id="pub"></canvas></div></div>
+<div class="card"><h3>Par variante de l'intitulé</h3><div class="chart"><canvas id="pubvar"></canvas></div></div></div>
+<div id="pub-src"></div>
 <h2>Journal des extractions</h2>
 <div class="card" id="journal" style="overflow-x:auto"></div>
 <h2>Géographie</h2>

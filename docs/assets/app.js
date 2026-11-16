@@ -64,6 +64,20 @@ const RENDU = {
     const ds = Object.entries(S.series).filter(([k]) => k !== "lba_recruteurs").map(([k, v]) => ({ label: (S.sources[k] || {}).requete || k, data: labels.map(d => (v.find(x => x.date === d) || {}).total ?? null) }));
     lineChart($("#serie"), ds, labels.map(dateFr));
     $("#serie-src").innerHTML = `<div class="src"><b>Requêtes :</b> une courbe par requête (détail dans le tableau ci-dessous).<br><b>Dates :</b> ${S.dates.map(dateFr).join(", ")} · <b>Canaux :</b> France Travail, La Bonne Alternance<br><b>Limites :</b> « total annoncé » = nombre renvoyé par l'API le jour de l'extraction (offres en ligne ce jour-là), pas un flux de nouvelles offres.</div>`;
+    const P = S.publication;
+    if (P && window.Chart) {
+      const lab = P.semaines.map(w => "sem. du " + new Date(w.debut + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) +
+        ((new Date(w.fin) - new Date(w.debut)) / 864e5 < 6 ? " (en cours)" : ""));
+      new Chart($("#pub"), { type: "bar", data: { labels: lab, datasets: [
+        { label: "Offres du métier", data: P.semaines.map(w => w.n_metier), backgroundColor: "#5b3df5" }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } } });
+      const cols = ["#5b3df5", "#e8573a", "#0f8a5c", "#b7791f", "#7a6fa8", "#3b82c4"];
+      new Chart($("#pubvar"), { type: "bar", data: { labels: lab, datasets: Object.entries(P.variantes).map(([v, d], i) => ({ label: v, data: d, backgroundColor: cols[i % cols.length] })) },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom" } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } } });
+    }
+    if (P) $("#pub-src").innerHTML = `<div class="src"><b>Donnée :</b> offres du métier <b>encore en ligne au ${dateFr(P.reference)}</b>, regroupées par semaine de leur date de publication (8 dernières semaines ; ${fr(P.avant)} offres publiées avant, ${fr(P.sans_date)} sans date).<br>
+      <b>Date :</b> extraction du ${dateFr(P.reference)} · <b>Canaux :</b> France Travail, La Bonne Alternance<br>
+      <b>Limites :</b> ce n'est pas un historique du marché. Les offres déjà pourvues ou retirées avant le ${dateFr(P.reference)} n'apparaissent pas : plus une semaine est ancienne, plus elle est sous-estimée. Les extractions quotidiennes, elles, mesurent le marché à chaque date.</div>`;
     $("#journal").innerHTML = `<table><tr><th>Date</th><th>Canal</th><th>Requête</th><th>Total annoncé</th><th>Récupérées</th></tr>${S.extractions.slice().reverse().map(e => `<tr><td>${dateFr(e.date)}</td><td>${esc(e.canal)}</td><td>${esc(e.requete)}<br><span class="muted">${esc(e.parametres)}</span></td><td>${fr(e.total_annonce)}</td><td>${Number(e.recuperees) === 0 && Number(e.total_annonce) > 0 ? "comptage seul" : fr(e.recuperees)}</td></tr>`).join("")}</table>`;
     const n = S.comptes.offres_metier;
     $("#geo").innerHTML = bars(S.regions, n) + srcMetier();

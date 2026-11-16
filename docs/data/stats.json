@@ -1,7 +1,7 @@
 {
  "metier": "Chargé·e CRM / marketing automation",
  "rome": "M1705",
- "genere_le": "2026-11-16 19:13 UTC",
+ "genere_le": "2026-11-16 19:31 UTC",
  "dates": [
   "2026-11-16"
  ],
@@ -1023,6 +1023,113 @@
     "n": 1
    }
   ]
+ },
+ "publication": {
+  "reference": "2026-11-16",
+  "semaines": [
+   {
+    "debut": "2026-09-28",
+    "fin": "2026-10-04",
+    "n_metier": 1,
+    "n_collectees": 7
+   },
+   {
+    "debut": "2026-10-05",
+    "fin": "2026-10-11",
+    "n_metier": 0,
+    "n_collectees": 13
+   },
+   {
+    "debut": "2026-10-12",
+    "fin": "2026-10-18",
+    "n_metier": 1,
+    "n_collectees": 13
+   },
+   {
+    "debut": "2026-10-19",
+    "fin": "2026-10-25",
+    "n_metier": 6,
+    "n_collectees": 48
+   },
+   {
+    "debut": "2026-10-26",
+    "fin": "2026-11-01",
+    "n_metier": 2,
+    "n_collectees": 50
+   },
+   {
+    "debut": "2026-11-02",
+    "fin": "2026-11-08",
+    "n_metier": 14,
+    "n_collectees": 72
+   },
+   {
+    "debut": "2026-11-09",
+    "fin": "2026-11-15",
+    "n_metier": 13,
+    "n_collectees": 63
+   },
+   {
+    "debut": "2026-11-16",
+    "fin": "2026-11-16",
+    "n_metier": 0,
+    "n_collectees": 9
+   }
+  ],
+  "variantes": {
+   "CRM manager / responsable CRM": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    4,
+    3,
+    0
+   ],
+   "Chargé·e CRM": [
+    0,
+    0,
+    0,
+    3,
+    0,
+    4,
+    6,
+    0
+   ],
+   "Emailing / marketing client": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "Marketing relationnel / fidélisation": [
+    1,
+    0,
+    1,
+    2,
+    2,
+    5,
+    3,
+    0
+   ],
+   "Marketing automation": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  "avant": 2,
+  "sans_date": 0
  },
  "veille": [
   {

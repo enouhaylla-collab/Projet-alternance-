@@ -168,6 +168,30 @@ def main():
                                        for r in cache[:30]],
                              "secteurs": top(Counter(r["secteur"] for r in cache if r["secteur"]), 8)}
 
+    # Profondeur dans le temps : offres encore en ligne, par semaine de publication
+    def lundi(d):
+        try:
+            j = dt.date.fromisoformat(d[:10])
+        except ValueError:
+            return None
+        return j - dt.timedelta(days=j.weekday())
+    ref = dt.date.fromisoformat(derniere)
+    debut = lundi(derniere) - dt.timedelta(weeks=7)
+    semaines = [debut + dt.timedelta(weeks=k) for k in range(8)]
+    toutes = Counter(lundi(o["date_publication"]) for o in offres if o["date_publication"])
+    met = Counter(lundi(o["date_publication"]) for o in metier if o["date_publication"])
+    par_var = defaultdict(Counter)
+    for o in metier:
+        if o["date_publication"]:
+            par_var[o["variante_metier"]][lundi(o["date_publication"])] += 1
+    anciennes = sum(1 for o in metier if o["date_publication"] and lundi(o["date_publication"]) < debut)
+    stats["publication"] = {
+        "reference": derniere,
+        "semaines": [{"debut": s.isoformat(), "fin": min(s + dt.timedelta(days=6), ref).isoformat(),
+                      "n_metier": met.get(s, 0), "n_collectees": toutes.get(s, 0)} for s in semaines],
+        "variantes": {v: [c.get(s, 0) for s in semaines] for v, c in par_var.items()},
+        "avant": anciennes, "sans_date": sum(1 for o in metier if not o["date_publication"])}
+
     # La veille : dernières offres du métier
     metier.sort(key=lambda o: o["date_publication"], reverse=True)
     stats["veille"] = [{k: o[k] for k in ("date_publication", "intitule", "entreprise", "commune", "contrat",
