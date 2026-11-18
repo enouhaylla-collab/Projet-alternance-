@@ -1,10 +1,11 @@
 {
  "metier": "Chargé·e CRM / marketing automation",
  "rome": "M1705",
- "genere_le": "2026-11-17 16:01 UTC",
+ "genere_le": "2026-11-18 15:41 UTC",
  "dates": [
   "2026-11-16",
-  "2026-11-17"
+  "2026-11-17",
+  "2026-11-18"
  ],
  "extractions": [
   {
@@ -182,6 +183,94 @@
    "total_annonce": "23",
    "recuperees": "23",
    "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705, dans un rayon de 100 km autour de 10 grandes villes (zones rurales moins couvertes) ; les « recruteurs » sont des entreprises que l'algorithme de La Bonne Alternance juge susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_automation",
+   "requete": "Mots-clés « marketing automation », France entière",
+   "parametres": "{\"motsCles\": \"marketing automation\"}",
+   "total_annonce": "1",
+   "recuperees": "1",
+   "limites": "Mots recherchés dans tout le texte de l'offre ; volume faible, donc sensible aux variations."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm",
+   "requete": "Mot-clé « CRM », France entière",
+   "parametres": "{\"motsCles\": \"CRM\"}",
+   "total_annonce": "265",
+   "recuperees": "265",
+   "limites": "Le mot « CRM » apparaît aussi dans des offres commerciales qui demandent seulement d'utiliser un logiciel CRM : le site distingue les offres dont l'intitulé désigne le métier."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm_m1705",
+   "requete": "Mot-clé « CRM » dans le code ROME M1705",
+   "parametres": "{\"codeROME\": \"M1705\", \"motsCles\": \"CRM\"}",
+   "total_annonce": "1",
+   "recuperees": "1",
+   "limites": "Croisement le plus proche du métier ; exclut les offres CRM classées dans un autre code ROME."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_fidelisation",
+   "requete": "Mots-clés « fidélisation client », France entière",
+   "parametres": "{\"motsCles\": \"fidélisation client\"}",
+   "total_annonce": "20",
+   "recuperees": "20",
+   "limites": "Ramène aussi des postes de vente ou de relation client en magasin : filtrés par l'intitulé."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_relationnel",
+   "requete": "Mots-clés « marketing relationnel », France entière",
+   "parametres": "{\"motsCles\": \"marketing relationnel\"}",
+   "total_annonce": "5",
+   "recuperees": "5",
+   "limites": "Mots recherchés dans tout le texte ; capte les offres CRM qui n'utilisent pas le sigle."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_rome_m1705",
+   "requete": "Code ROME M1705 (Marketing), France entière",
+   "parametres": "{\"codeROME\": \"M1705\"}",
+   "total_annonce": "205",
+   "recuperees": "0",
+   "limites": "Toutes les offres classées M1705 par France Travail, au-delà du seul CRM ; le classement ROME est fait par le recruteur ou le conseiller."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "La Bonne Alternance (API offres)",
+   "requete_id": "lba_m1705",
+   "requete": "Offres en alternance, code ROME M1705, 10 grandes villes",
+   "parametres": "{\"romes\": \"M1705\", \"rayon_km\": 100, \"villes\": \"Paris, Lyon, Clermont-Ferrand, Bordeaux, Lille, Nantes, Marseille, Toulouse, Strasbourg, Rennes\"}",
+   "total_annonce": "9",
+   "recuperees": "9",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705, dans un rayon de 100 km autour de 10 grandes villes (zones rurales moins couvertes) ; les « recruteurs » sont des entreprises que l'algorithme de La Bonne Alternance juge susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  },
+  {
+   "date": "2026-11-18",
+   "heure_utc": "15:41",
+   "canal": "La Bonne Alternance (API recruteurs)",
+   "requete_id": "lba_recruteurs",
+   "requete": "Entreprises susceptibles de recruter, M1705, autour de Clermont-Ferrand",
+   "parametres": "{\"romes\": \"M1705\", \"autour_de\": \"Clermont-Ferrand\", \"rayon_km\": 60}",
+   "total_annonce": "23",
+   "recuperees": "23",
+   "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705, dans un rayon de 100 km autour de 10 grandes villes (zones rurales moins couvertes) ; les « recruteurs » sont des entreprises que l'algorithme de La Bonne Alternance juge susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
   }
  ],
  "sources": {
@@ -243,6 +332,10 @@
    {
     "date": "2026-11-17",
     "total": 1
+   },
+   {
+    "date": "2026-11-18",
+    "total": 1
    }
   ],
   "ft_crm": [
@@ -253,6 +346,10 @@
    {
     "date": "2026-11-17",
     "total": 272
+   },
+   {
+    "date": "2026-11-18",
+    "total": 265
    }
   ],
   "ft_crm_m1705": [
@@ -262,6 +359,10 @@
    },
    {
     "date": "2026-11-17",
+    "total": 1
+   },
+   {
+    "date": "2026-11-18",
     "total": 1
    }
   ],
@@ -273,6 +374,10 @@
    {
     "date": "2026-11-17",
     "total": 21
+   },
+   {
+    "date": "2026-11-18",
+    "total": 20
    }
   ],
   "ft_relationnel": [
@@ -283,6 +388,10 @@
    {
     "date": "2026-11-17",
     "total": 4
+   },
+   {
+    "date": "2026-11-18",
+    "total": 5
    }
   ],
   "ft_rome_m1705": [
@@ -293,6 +402,10 @@
    {
     "date": "2026-11-17",
     "total": 202
+   },
+   {
+    "date": "2026-11-18",
+    "total": 205
    }
   ],
   "lba_m1705": [
@@ -303,6 +416,10 @@
    {
     "date": "2026-11-17",
     "total": 10
+   },
+   {
+    "date": "2026-11-18",
+    "total": 9
    }
   ],
   "lba_recruteurs": [
@@ -313,12 +430,16 @@
    {
     "date": "2026-11-17",
     "total": 23
+   },
+   {
+    "date": "2026-11-18",
+    "total": 23
    }
   ]
  },
- "derniere": "2026-11-17",
+ "derniere": "2026-11-18",
  "comptes": {
-  "offres_uniques": 303,
+  "offres_uniques": 295,
   "offres_metier": 39,
   "offres_metier_ft": 39,
   "offres_metier_lba": 0,
@@ -327,11 +448,11 @@
  "variantes": [
   {
    "label": "Chargé·e CRM",
-   "n": 17
+   "n": 18
   },
   {
    "label": "Marketing relationnel / fidélisation",
-   "n": 13
+   "n": 12
   },
   {
    "label": "CRM manager / responsable CRM",
@@ -380,6 +501,10 @@
    "n": 1
   },
   {
+   "label": "Digital method & tools for crm",
+   "n": 1
+  },
+  {
    "label": "Responsable Marketing CRM",
    "n": 1
   },
@@ -402,10 +527,6 @@
   {
    "label": "STAGE - Chargé de projet CRM / fiabilisation data IA",
    "n": 1
-  },
-  {
-   "label": "Consultant Solutions ERP et CRM pour PME",
-   "n": 1
   }
  ],
  "regions": [
@@ -418,11 +539,11 @@
    "n": 4
   },
   {
-   "label": "Pays de la Loire",
+   "label": "Provence-Alpes-Côte d'Azur",
    "n": 4
   },
   {
-   "label": "Provence-Alpes-Côte d'Azur",
+   "label": "Pays de la Loire",
    "n": 3
   },
   {
@@ -460,11 +581,11 @@
    "n": 2
   },
   {
-   "label": "06",
+   "label": "13",
    "n": 2
   },
   {
-   "label": "44",
+   "label": "06",
    "n": 2
   },
   {
@@ -580,10 +701,10 @@
  ],
  "salaires": {
   "n_ft": 39,
-  "n_affiche": 21,
-  "part_affiche": 53.8,
-  "n_montants": 18,
-  "mediane_min_mensuel": 3125,
+  "n_affiche": 20,
+  "part_affiche": 51.3,
+  "n_montants": 17,
+  "mediane_min_mensuel": 3333,
   "min": 800,
   "max": 5833,
   "exemples": [
@@ -651,16 +772,16 @@
   {
    "label": "Fidélisation / rétention",
    "categorie": "Compétence",
-   "n": 20,
-   "part": 51.3,
+   "n": 19,
+   "part": 48.7,
    "formation": "À compléter",
    "justification": "Vérifier dans la maquette du Master 2."
   },
   {
    "label": "Gestion de projet",
    "categorie": "Compétence",
-   "n": 18,
-   "part": 46.2,
+   "n": 19,
+   "part": 48.7,
    "formation": "À compléter",
    "justification": ""
   },
@@ -689,20 +810,20 @@
    "justification": "Simulation Forage : segmentation des cibles. À croiser avec la maquette du Master."
   },
   {
+   "label": "RGPD / qualité de la base",
+   "categorie": "Compétence",
+   "n": 12,
+   "part": 30.8,
+   "formation": "À compléter",
+   "justification": ""
+  },
+  {
    "label": "Parcours client",
    "categorie": "Compétence",
    "n": 11,
    "part": 28.2,
    "formation": "À compléter",
    "justification": "Vérifier dans la maquette du Master 2."
-  },
-  {
-   "label": "RGPD / qualité de la base",
-   "categorie": "Compétence",
-   "n": 11,
-   "part": 28.2,
-   "formation": "À compléter",
-   "justification": ""
   },
   {
    "label": "Rédaction / contenus",
@@ -731,24 +852,24 @@
   {
    "label": "Anglais",
    "categorie": "Compétence",
-   "n": 6,
-   "part": 15.4,
+   "n": 7,
+   "part": 17.9,
    "formation": "À compléter",
    "justification": ""
   },
   {
    "label": "Salesforce",
    "categorie": "Outil",
-   "n": 6,
-   "part": 15.4,
+   "n": 7,
+   "part": 17.9,
    "formation": "Non",
    "justification": "Aucun cours ni expérience à ce jour."
   },
   {
    "label": "Intelligence artificielle",
    "categorie": "Compétence",
-   "n": 4,
-   "part": 10.3,
+   "n": 5,
+   "part": 12.8,
    "formation": "Partiel (autoformation)",
    "justification": "Usage de Claude IA (CV)."
   },
@@ -893,10 +1014,16 @@
  ],
  "evolution": {
   "de": "2026-11-16",
-  "a": "2026-11-17",
+  "a": "2026-11-18",
   "n_avant": 39,
   "n_apres": 39,
   "mots": [
+   {
+    "label": "RGPD / qualité de la base",
+    "avant": 23.1,
+    "apres": 30.8,
+    "delta": 7.7
+   },
    {
     "label": "Analyse de données / KPI",
     "avant": 69.2,
@@ -916,21 +1043,9 @@
     "delta": 5.1
    },
    {
-    "label": "RGPD / qualité de la base",
-    "avant": 23.1,
-    "apres": 28.2,
-    "delta": 5.1
-   },
-   {
     "label": "Emailing / campagnes e-mail",
     "avant": 20.5,
     "apres": 23.1,
-    "delta": 2.6
-   },
-   {
-    "label": "Fidélisation / rétention",
-    "avant": 48.7,
-    "apres": 51.3,
     "delta": 2.6
    },
    {
@@ -960,13 +1075,37 @@
    {
     "label": "Gestion de projet",
     "avant": 46.2,
-    "apres": 46.2,
+    "apres": 48.7,
+    "delta": 2.5
+   },
+   {
+    "label": "Fidélisation / rétention",
+    "avant": 48.7,
+    "apres": 48.7,
     "delta": 0.0
    },
    {
     "label": "Rédaction / contenus",
     "avant": 25.6,
     "apres": 25.6,
+    "delta": 0.0
+   },
+   {
+    "label": "Anglais",
+    "avant": 17.9,
+    "apres": 17.9,
+    "delta": 0.0
+   },
+   {
+    "label": "Intelligence artificielle",
+    "avant": 12.8,
+    "apres": 12.8,
+    "delta": 0.0
+   },
+   {
+    "label": "Salesforce",
+    "avant": 17.9,
+    "apres": 17.9,
     "delta": 0.0
    },
    {
@@ -1015,24 +1154,6 @@
     "label": "Lead scoring / génération de leads",
     "avant": 25.6,
     "apres": 23.1,
-    "delta": -2.5
-   },
-   {
-    "label": "Anglais",
-    "avant": 17.9,
-    "apres": 15.4,
-    "delta": -2.5
-   },
-   {
-    "label": "Intelligence artificielle",
-    "avant": 12.8,
-    "apres": 10.3,
-    "delta": -2.5
-   },
-   {
-    "label": "Salesforce",
-    "avant": 17.9,
-    "apres": 15.4,
     "delta": -2.5
    },
    {
@@ -1333,7 +1454,7 @@
   ]
  },
  "publication": {
-  "reference": "2026-11-17",
+  "reference": "2026-11-18",
   "semaines": [
    {
     "debut": "2026-09-28",
@@ -1345,7 +1466,7 @@
     "debut": "2026-10-05",
     "fin": "2026-10-11",
     "n_metier": 0,
-    "n_collectees": 12
+    "n_collectees": 11
    },
    {
     "debut": "2026-10-12",
@@ -1357,31 +1478,31 @@
     "debut": "2026-10-19",
     "fin": "2026-10-25",
     "n_metier": 5,
-    "n_collectees": 45
+    "n_collectees": 40
    },
    {
     "debut": "2026-10-26",
     "fin": "2026-11-01",
     "n_metier": 2,
-    "n_collectees": 49
+    "n_collectees": 47
    },
    {
     "debut": "2026-11-02",
     "fin": "2026-11-08",
-    "n_metier": 14,
-    "n_collectees": 71
+    "n_metier": 13,
+    "n_collectees": 68
    },
    {
     "debut": "2026-11-09",
     "fin": "2026-11-15",
     "n_metier": 12,
-    "n_collectees": 62
+    "n_collectees": 57
    },
    {
     "debut": "2026-11-16",
-    "fin": "2026-11-17",
-    "n_metier": 2,
-    "n_collectees": 19
+    "fin": "2026-11-18",
+    "n_metier": 3,
+    "n_collectees": 27
    }
   ],
   "variantes": {
@@ -1393,7 +1514,7 @@
     0,
     4,
     6,
-    2
+    3
    ],
    "CRM manager / responsable CRM": [
     0,
@@ -1421,7 +1542,7 @@
     1,
     2,
     2,
-    5,
+    4,
     2,
     0
    ],
@@ -1440,6 +1561,16 @@
   "sans_date": 0
  },
  "veille": [
+  {
+   "date_publication": "2026-11-18",
+   "intitule": "Digital method & tools (5 years exp) for crm (h/f) (H/F)",
+   "entreprise": "",
+   "commune": "13 - Marseille",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8950787"
+  },
   {
    "date_publication": "2026-11-17",
    "intitule": "Chargé(e) webmarketing & CRM (H/F)",
@@ -1709,16 +1840,6 @@
    "alternance": "oui",
    "canal": "France Travail",
    "url": "https://candidat.francetravail.fr/offres/recherche/detail/8510913"
-  },
-  {
-   "date_publication": "2026-11-03",
-   "intitule": "CDI Téléconseiller / Téléconseillère fidélisation B to B F/H - Groupe The Links",
-   "entreprise": "Groupe The Links",
-   "commune": "44 - Nantes",
-   "contrat": "CDI",
-   "alternance": "non",
-   "canal": "France Travail",
-   "url": "https://candidat.francetravail.fr/offres/recherche/detail/8521529"
   },
   {
    "date_publication": "2026-10-30",
