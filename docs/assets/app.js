@@ -2,7 +2,7 @@
 const PAGES = [
   ["index.html", "Accueil"], ["metier.html", "1 · Le métier"], ["offres.html", "2 · Les offres"],
   ["competences.html", "3 · Compétences"], ["evolution.html", "4 · Évolution"], ["acteurs.html", "5 · Acteurs"],
-  ["plan.html", "6 · Mon année"], ["methode.html", "7 · Méthode"]
+  ["plan.html", "6 · Mon année"], ["methode.html", "7 · Méthode"], ["postulia.html", "★ Postul'IA en direct"]
 ];
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));

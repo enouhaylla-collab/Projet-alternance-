@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Postul'IA · vitrine en direct</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--ink:#1d1a2b;--muted:#6b6778;--line:#e6e1d8;--violet:#5b3df5;--soft:#ece8ff;--coral:#ff6b4a;--ok:#13a36e;--oksoft:#e1f6ec;--warn:#d98a00;--warnsoft:#fff3d9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;margin:0;letter-spacing:-.01em}
+a{color:var(--violet)}
+button{font-family:inherit;font-size:inherit;cursor:pointer}
+input,select{font-family:inherit;font-size:14px;color:var(--ink)}
+.app{max-width:1400px;margin:0 auto;padding:16px 20px 60px}
+.top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--violet),var(--coral));display:grid;place-items:center;color:#fff;font-family:"Bricolage Grotesque";font-weight:800;font-size:19px}
+.logo{display:flex;gap:10px;align-items:center}.logo h1{font-size:23px}.logo small{display:block;color:var(--muted);font-size:12px}
+.tabs{margin-left:auto;display:flex;gap:4px;background:#ebe6dd;padding:4px;border-radius:12px;flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:8px 14px;border-radius:9px;font-weight:600;color:var(--muted)}
+.tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.bandeau{background:var(--soft);border:1px solid #d9d1ff;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:13.5px}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-right:6px;box-shadow:0 0 0 4px var(--oksoft)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px}
+.kpi{padding:14px 16px}.kpi .v{font-family:"Bricolage Grotesque";font-size:28px;font-weight:800}.kpi .l{color:var(--muted);font-size:12.5px}
+.view{display:none}.view.on{display:block}
+.grid{display:grid;grid-template-columns:240px 1fr 400px;gap:16px;align-items:start}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}.dcol{position:static!important}.detail{max-height:none!important}}
+.filtres{padding:14px}.fg{margin-bottom:12px}.fg .t{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.inp{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfaf7}
+.cases label{display:flex;gap:6px;align-items:center;font-size:13px}.cases .n{margin-left:auto;color:var(--muted);font-size:12px}
+.head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}.head .r{margin-left:auto}
+.offre{padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;gap:12px;align-items:center}
+.offre:hover,.offre.sel{border-color:var(--violet)}
+.ring{min-width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px}
+.muted{color:var(--muted)}.tag{display:inline-block;background:#f1eee8;border-radius:6px;padding:1px 7px;font-size:12px;margin-right:4px}
+.dcol{position:sticky;top:12px}.detail{padding:16px;max-height:calc(100vh - 24px);overflow:auto}
+.chip{display:inline-block;border-radius:20px;padding:2px 9px;font-size:12.5px;margin:2px 3px 2px 0;font-weight:600}
+.chip.ok{background:var(--oksoft);color:var(--ok)}.chip.ko{background:var(--warnsoft);color:var(--warn)}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.st div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfaf7}
+.st b{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.desc{white-space:pre-wrap;font-size:13px;background:#fbfaf7;border-radius:10px;padding:10px;max-height:300px;overflow:auto}
+.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+.card{padding:14px}.actu{font-size:12.5px;margin-top:8px;background:#F1EEF8;border-radius:8px;padding:6px 10px}
+.lettre{white-space:pre-wrap;font-size:13px;background:#fbfaf7;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:8px;display:none}
+.lettre.on{display:block}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px 12px;font-weight:600}
+.statut{float:right;font-size:12px;font-weight:700;border-radius:20px;padding:2px 9px;background:var(--soft);color:var(--violet)}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:900px){.agrid{grid-template-columns:1fr}}
+.barre{margin:7px 0}.barre .t{display:flex;font-size:13px}.barre .t span{margin-left:auto;color:var(--muted)}
+.barre .b{height:7px;background:#f1eee8;border-radius:4px;overflow:hidden}.barre .b i{display:block;height:100%}
+.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.etape{padding:16px}.etape .n{width:28px;height:28px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:8px}
+.vide{padding:30px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="logo"><div class="mark">P</div><div><h1>Postul'IA</h1><small id="maj">Chargement…</small></div></div>
+    <div class="tabs" id="tabs">
+      <button data-v="offres" class="on">Offres</button><button data-v="cands">Candidatures</button>
+      <button data-v="analyse">Analyse du profil</button><button data-v="comment">Comment ça marche</button>
+    </div>
+  </div>
+  <div class="bandeau"><span class="live"></span><b>Vitrine en direct, en lecture seule.</b> Ces données sont celles de mon outil Postul'IA (Google Apps Script + Google Sheets) : il collecte chaque matin les offres de stage et d'alternance en marketing via les API officielles, les note, prépare CV et lettres, et publie automatiquement cette vitrine sur GitHub. Mes coordonnées ne sont jamais publiées. · <a href="index.html">← Retour à l'enquête métier</a></div>
+  <div class="kpis" id="kpis"></div>
+
+  <section class="view on" id="v-offres">
+    <div class="grid">
+      <aside class="panel filtres">
+        <div class="fg"><span class="t">Recherche</span><input class="inp" id="q" placeholder="Intitulé, entreprise, mot-clé…"></div>
+        <div class="fg"><span class="t">Contrat</span><select class="inp" id="f-contrat"><option value="">Tous</option><option>Alternance</option><option>Stage</option></select></div>
+        <div class="fg"><span class="t">Publiée depuis</span><select class="inp" id="f-date"><option value="9999">Toutes</option><option value="1">24 h</option><option value="3">3 jours</option><option value="7">7 jours</option><option value="14">14 jours</option></select></div>
+        <div class="fg"><span class="t">Score minimum : <b id="f-score-v">0</b> %</span><input type="range" id="f-score" min="0" max="95" step="5" value="0" style="width:100%;accent-color:var(--violet)"></div>
+        <div class="fg"><span class="t">Taille d'entreprise</span><div class="cases" id="f-taille"></div></div>
+        <div class="fg"><span class="t">Domaine</span><div class="cases" id="f-secteur"></div></div>
+        <div class="fg"><span class="t">Source</span><div class="cases" id="f-source"></div></div>
+      </aside>
+      <div>
+        <div class="head"><h2 id="nb">Offres</h2><div class="r"><select class="inp" id="tri" style="width:auto"><option value="date">Plus récentes</option><option value="score">Meilleur score</option></select></div></div>
+        <div id="liste"></div>
+      </div>
+      <div class="dcol"><div class="panel detail" id="detail"><div class="vide">Clique sur une offre pour voir son analyse.</div></div></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-cands">
+    <div class="head"><h2>Candidatures préparées</h2><span class="muted">CV et lettre générés pour chaque offre, validés un par un avant tout envoi. Lettres affichées sans nom ni coordonnées.</span></div>
+    <div class="cands" id="cands"></div>
+  </section>
+
+  <section class="view" id="v-analyse"><div id="analyse"></div></section>
+
+  <section class="view" id="v-comment">
+    <div class="etapes">
+      <div class="panel etape"><div class="n">1</div><h3>Collecte</h3><p class="muted">Chaque matin à 7 h, un déclencheur Apps Script interroge les API officielles : France Travail, La Bonne Alternance, Adzuna. Aucun scraping. Les offres hors marketing sont écartées et les doublons supprimés.</p></div>
+      <div class="panel etape"><div class="n">2</div><h3>Enrichissement</h3><p class="muted">Taille et secteur de l'entreprise : d'abord ce que dit l'offre, sinon le répertoire Sirene de l'Insee (API officielle, catégorie PME / ETI / grande entreprise).</p></div>
+      <div class="panel etape"><div class="n">3</div><h3>Analyse et score</h3><p class="muted">Un dictionnaire de ~55 compétences, outils et canaux (avec synonymes) repère les mots-clés de chaque offre et les compare à mon profil : 80 points pour la part de mots-clés maîtrisés, 20 si le contrat correspond.</p></div>
+      <div class="panel etape"><div class="n">4</div><h3>CV et lettre</h3><p class="muted">Un CV Google Docs (et sa version Word) par offre : mes réalisations liées à l'offre passent en premier, ses mots-clés en gras. La lettre cite une actualité récente de l'entreprise (Google Actualités), filtrée pour écarter les sujets sensibles.</p></div>
+      <div class="panel etape"><div class="n">5</div><h3>Validation humaine</h3><p class="muted">Rien ne part sans moi : je relis, coche trois cases, puis valide. L'envoi se fait par Gmail (CV et lettre en pièces jointes) ou j'ouvre le site de l'offre.</p></div>
+      <div class="panel etape"><div class="n">6</div><h3>Vitrine</h3><p class="muted">Après la routine, le script publie un fichier de données anonymisé dans ce dépôt GitHub via l'API GitHub ; cette page GitHub Pages l'affiche.</p></div>
+    </div>
+  </section>
+</div>
+
+<script>
+var D = null, SEL = null;
+var F = { q: '', contrat: '', date: 9999, score: 0, tri: 'date', taille: {}, secteur: {}, source: {} };
+function $(s) { return document.querySelector(s); }
+function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function jours(d) { return d ? (Date.now() - new Date(d).getTime()) / 864e5 : 9999; }
+function dateFr(d, h) { if (!d) return ''; var x = new Date(d); return h ? x.toLocaleString('fr-FR', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : x.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }); }
+function couleur(s) { return s >= 75 ? ['#e1f6ec', '#13a36e'] : s >= 50 ? ['#ece8ff', '#5b3df5'] : ['#fff3d9', '#d98a00']; }
+function src(o) { return String(o.source || '').split(' / ')[0]; }
+
+fetch('data/postulia.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+  D = d;
+  D.offres = D.offres.filter(function (o) { return o.statut !== 'Ignorée'; });
+  $('#maj').textContent = 'Mise à jour automatique le ' + dateFr(d.maj, true);
+  kpis(); filtres(); offres(); cands(); analyse();
+}).catch(function () {
+  $('#maj').textContent = 'Données pas encore publiées';
+  $('#liste').innerHTML = '<div class="panel vide">La vitrine n\'a pas encore reçu de données. Elles arrivent après la première publication depuis Google Sheets.</div>';
+});
+
+function kpis() {
+  var c = D.candidatures, moy = D.offres.length ? Math.round(D.offres.reduce(function (s, o) { return s + o.score; }, 0) / D.offres.length) : 0;
+  var nouv = D.offres.filter(function (o) { return jours(o.date) <= 1; }).length;
+  var srcs = Object.keys(D.sources || {}).length;
+  $('#kpis').innerHTML = [
+    [D.offres.length, 'offres actives analysées'], [nouv, 'publiées depuis 24 h'], [srcs, 'sources (API officielles + ajouts)'],
+    [moy + ' %', 'score moyen avec mon profil'], [c.length, 'candidatures préparées'],
+    [c.filter(function (k) { return /Envoy|Entretien|Refus/.test(k.statut); }).length, 'candidatures envoyées']
+  ].map(function (k) { return '<div class="panel kpi"><div class="v">' + k[0] + '</div><div class="l">' + k[1] + '</div></div>'; }).join('');
+}
+
+function cases(sel, cle, valeurs) {
+  var cpt = {}; D.offres.forEach(function (o) { var v = valeurs(o); cpt[v] = (cpt[v] || 0) + 1; });
+  $(sel).innerHTML = Object.keys(cpt).sort().map(function (v) {
+    return '<label><input type="checkbox" data-c="' + cle + '" value="' + esc(v) + '"> ' + esc(v) + '<span class="n">' + cpt[v] + '</span></label>';
+  }).join('');
+}
+function filtres() {
+  cases('#f-taille', 'taille', function (o) { return o.taille || 'Inconnue'; });
+  cases('#f-secteur', 'secteur', function (o) { return o.secteur || 'Inconnu'; });
+  cases('#f-source', 'source', src);
+  $$('[data-c]').forEach(function (el) { el.onchange = function () { F[el.dataset.c][el.value] = el.checked; if (!el.checked) delete F[el.dataset.c][el.value]; offres(); }; });
+  $('#q').oninput = function (e) { F.q = e.target.value.toLowerCase(); offres(); };
+  $('#f-contrat').onchange = function (e) { F.contrat = e.target.value; offres(); };
+  $('#f-date').onchange = function (e) { F.date = Number(e.target.value); offres(); };
+  $('#f-score').oninput = function (e) { F.score = Number(e.target.value); $('#f-score-v').textContent = F.score; offres(); };
+  $('#tri').onchange = function (e) { F.tri = e.target.value; offres(); };
+}
+function garde(o) {
+  if (F.contrat && o.contrat !== F.contrat) return false;
+  if (jours(o.date) > F.date || o.score < F.score) return false;
+  if (Object.keys(F.taille).length && !F.taille[o.taille || 'Inconnue']) return false;
+  if (Object.keys(F.secteur).length && !F.secteur[o.secteur || 'Inconnu']) return false;
+  if (Object.keys(F.source).length && !F.source[src(o)]) return false;
+  if (F.q) {
+    var t = (o.titre + ' ' + o.entreprise + ' ' + o.ville + ' ' + (o.motsCles || []).map(function (m) { return m.mot; }).join(' ')).toLowerCase();
+    if (t.indexOf(F.q) === -1) return false;
+  }
+  return true;
+}
+function offres() {
+  var l = D.offres.filter(garde).sort(function (a, b) { return F.tri === 'score' ? b.score - a.score : new Date(b.date) - new Date(a.date); });
+  $('#nb').textContent = l.length + ' offre' + (l.length > 1 ? 's' : '');
+  $('#liste').innerHTML = l.slice(0, 150).map(function (o) {
+    var c = couleur(o.score);
+    return '<div class="panel offre' + (SEL === o.id ? ' sel' : '') + '" data-id="' + esc(o.id) + '"><div style="flex:1;min-width:0"><b>' + esc(o.titre) + '</b>' +
+      '<div class="muted" style="font-size:12.5px">' + esc(o.entreprise) + ' · ' + esc(o.ville) + ' · ' + dateFr(o.date) + '</div>' +
+      '<div style="margin-top:4px"><span class="tag">' + esc(o.contrat) + '</span><span class="tag">' + esc(o.taille || 'Inconnue') + '</span><span class="tag">' + esc(src(o)) + '</span></div></div>' +
+      '<div class="ring" style="background:' + c[0] + ';color:' + c[1] + '">' + o.score + '%</div></div>';
+  }).join('') + (l.length > 150 ? '<p class="muted">150 premières offres affichées : affine les filtres.</p>' : '') || '<div class="panel vide">Aucune offre ne correspond à ces filtres.</div>';
+  $$('.offre').forEach(function (el) { el.onclick = function () { SEL = el.dataset.id; detail(); offres(); }; });
+}
+function detail() {
+  var o = D.offres.filter(function (x) { return x.id === SEL; })[0];
+  if (!o) return;
+  var m = o.motsCles || [], ok = m.filter(function (k) { return k.acquis; }).length, c = couleur(o.score);
+  $('#detail').innerHTML = '<div style="display:flex;gap:10px"><div style="flex:1"><b>' + esc(o.entreprise) + '</b><div class="muted" style="font-size:12.5px">' + esc(o.ville) + ' · publiée le ' + dateFr(o.date) + ' · ' + esc(src(o)) + '</div></div>' +
+    '<div class="ring" style="background:' + c[0] + ';color:' + c[1] + '">' + o.score + '%</div></div>' +
+    '<h3 style="margin-top:10px">' + esc(o.titre) + '</h3>' +
+    '<div class="st"><div><b>Contrat</b>' + esc(o.contrat) + '</div><div><b>Taille</b>' + esc(o.taille) + '</div><div><b>Domaine</b>' + esc(o.secteur) + '</div><div><b>Envoi</b>' + (o.envoyable ? 'par e-mail' : 'sur le site de l\'offre') + '</div></div>' +
+    '<b style="font-size:12px;color:var(--muted);text-transform:uppercase">Mots-clés de l\'offre · ' + ok + '/' + m.length + ' dans mon profil</b><div style="margin:6px 0 4px">' +
+    (m.length ? m.map(function (k) { return '<span class="chip ' + (k.acquis ? 'ok">✓ ' : 'ko">+ ') + esc(k.mot) + '</span>'; }).join('') : '<span class="muted">Aucun mot-clé du dictionnaire repéré.</span>') + '</div>' +
+    '<p class="muted" style="font-size:12px">Vert : présent dans mon profil (mis en gras dans le CV) · orange : à acquérir ou à ajouter.</p>' +
+    '<b style="font-size:12px;color:var(--muted);text-transform:uppercase">Description</b><div class="desc">' + esc(o.description) + '</div>' +
+    (o.lien ? '<p><a href="' + esc(o.lien) + '" target="_blank" rel="noopener">Voir l\'offre d\'origine ↗</a></p>' : '');
+}
+function cands() {
+  var c = D.candidatures;
+  $('#cands').innerHTML = c.length ? c.map(function (k, i) {
+    var a = k.actu || '', m = a.match(/^(.*)\s(https?:\/\/\S+)$/);
+    return '<div class="panel card"><span class="statut">' + esc(k.statut) + '</span><b style="font-size:15px">' + esc(k.entreprise) + '</b><div>' + esc(k.titre) + '</div>' +
+      '<div class="muted" style="font-size:12.5px">' + esc(k.contrat) + ' · ' + esc(k.ville) + ' · score ' + esc(k.score) + ' % · préparée le ' + dateFr(k.preparee) + '</div>' +
+      (a ? '<div class="actu">📰 ' + (m ? 'Actualité citée : <a href="' + esc(m[2]) + '" target="_blank" rel="noopener">' + esc(m[1]) + '</a>' : esc(a)) + '</div>' : '') +
+      (k.lettre ? '<button class="btn" style="margin-top:8px" data-l="' + i + '">Lire la lettre générée</button><div class="lettre" id="l' + i + '">' + esc(k.lettre) + '</div>' : '') + '</div>';
+  }).join('') : '<div class="panel vide">Aucune candidature préparée pour le moment.</div>';
+  $$('[data-l]').forEach(function (b) { b.onclick = function () { $('#l' + b.dataset.l).classList.toggle('on'); }; });
+}
+function barre(k, total, coul) {
+  var p = Math.round(100 * k.n / total);
+  return '<div class="barre"><div class="t">' + esc(k.mot) + '<span>' + k.n + ' offres · ' + p + ' %</span></div><div class="b"><i style="width:' + p + '%;background:' + coul + '"></i></div></div>';
+}
+function analyse() {
+  var cpt = {}, n = D.offres.length;
+  D.offres.forEach(function (o) { (o.motsCles || []).forEach(function (m) { cpt[m.mot] = cpt[m.mot] || { mot: m.mot, n: 0, acquis: m.acquis }; cpt[m.mot].n++; }); });
+  var l = Object.keys(cpt).map(function (k) { return cpt[k]; }).sort(function (a, b) { return b.n - a.n; });
+  var forces = l.filter(function (k) { return k.acquis; }), faibles = l.filter(function (k) { return !k.acquis; });
+  var dem = l.reduce(function (s, k) { return s + k.n; }, 0), cou = forces.reduce(function (s, k) { return s + k.n; }, 0);
+  $('#analyse').innerHTML = '<div class="panel card" style="margin-bottom:16px"><b>En résumé :</b> sur ' + n + ' offres, mon profil couvre <b>' + (dem ? Math.round(100 * cou / dem) : 0) + ' %</b> des demandes de compétences et d\'outils. Calculé automatiquement à chaque mise à jour.</div>' +
+    '<div class="agrid"><div class="panel card"><h3 style="color:var(--ok)">✓ Forces</h3><p class="muted">Demandées dans les offres et présentes dans mon profil.</p>' + forces.slice(0, 12).map(function (k) { return barre(k, n, 'var(--ok)'); }).join('') + '</div>' +
+    '<div class="panel card"><h3 style="color:var(--warn)">+ Points à travailler</h3><p class="muted">Demandés dans les offres, absents de mon profil.</p>' + faibles.slice(0, 12).map(function (k) { return barre(k, n, 'var(--warn)'); }).join('') + '</div></div>';
+}
+$$('#tabs button').forEach(function (b) {
+  b.onclick = function () {
+    $$('#tabs button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    $$('.view').forEach(function (v) { v.classList.toggle('on', v.id === 'v-' + b.dataset.v); });
+  };
+});
+</script>
+</body>
+</html>
