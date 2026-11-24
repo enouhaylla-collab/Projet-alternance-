@@ -1,7 +1,7 @@
 {
  "metier": "Chargé·e CRM / marketing automation",
  "rome": "M1705",
- "genere_le": "2026-11-23 18:10 UTC",
+ "genere_le": "2026-11-24 17:46 UTC",
  "dates": [
   "2026-11-16",
   "2026-11-17",
@@ -10,7 +10,8 @@
   "2026-11-20",
   "2026-11-21",
   "2026-11-22",
-  "2026-11-23"
+  "2026-11-23",
+  "2026-11-24"
  ],
  "extractions": [
   {
@@ -716,6 +717,72 @@
    "total_annonce": "19",
    "recuperees": "19",
    "limites": "Offres d'alternance de La Bonne Alternance et de ses partenaires, code ROME M1705, dans un rayon de 100 km autour de 10 grandes villes (zones rurales moins couvertes) ; les « recruteurs » sont des entreprises que l'algorithme de La Bonne Alternance juge susceptibles d'embaucher (candidature spontanée), pas des offres publiées."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_automation",
+   "requete": "Mots-clés « marketing automation », France entière",
+   "parametres": "{\"motsCles\": \"marketing automation\"}",
+   "total_annonce": "2",
+   "recuperees": "2",
+   "limites": "Mots recherchés dans tout le texte de l'offre ; volume faible, donc sensible aux variations."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm",
+   "requete": "Mot-clé « CRM », France entière",
+   "parametres": "{\"motsCles\": \"CRM\"}",
+   "total_annonce": "261",
+   "recuperees": "261",
+   "limites": "Le mot « CRM » apparaît aussi dans des offres commerciales qui demandent seulement d'utiliser un logiciel CRM : le site distingue les offres dont l'intitulé désigne le métier."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_crm_m1705",
+   "requete": "Mot-clé « CRM » dans le code ROME M1705",
+   "parametres": "{\"codeROME\": \"M1705\", \"motsCles\": \"CRM\"}",
+   "total_annonce": "1",
+   "recuperees": "1",
+   "limites": "Croisement le plus proche du métier ; exclut les offres CRM classées dans un autre code ROME."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_fidelisation",
+   "requete": "Mots-clés « fidélisation client », France entière",
+   "parametres": "{\"motsCles\": \"fidélisation client\"}",
+   "total_annonce": "17",
+   "recuperees": "17",
+   "limites": "Ramène aussi des postes de vente ou de relation client en magasin : filtrés par l'intitulé."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_relationnel",
+   "requete": "Mots-clés « marketing relationnel », France entière",
+   "parametres": "{\"motsCles\": \"marketing relationnel\"}",
+   "total_annonce": "3",
+   "recuperees": "3",
+   "limites": "Mots recherchés dans tout le texte ; capte les offres CRM qui n'utilisent pas le sigle."
+  },
+  {
+   "date": "2026-11-24",
+   "heure_utc": "17:45",
+   "canal": "France Travail (API Offres d'emploi v2)",
+   "requete_id": "ft_rome_m1705",
+   "requete": "Code ROME M1705 (Marketing), France entière",
+   "parametres": "{\"codeROME\": \"M1705\"}",
+   "total_annonce": "199",
+   "recuperees": "0",
+   "limites": "Toutes les offres classées M1705 par France Travail, au-delà du seul CRM ; le classement ROME est fait par le recruteur ou le conseiller."
   }
  ],
  "sources": {
@@ -801,6 +868,10 @@
    {
     "date": "2026-11-23",
     "total": 1
+   },
+   {
+    "date": "2026-11-24",
+    "total": 2
    }
   ],
   "ft_crm": [
@@ -835,6 +906,10 @@
    {
     "date": "2026-11-23",
     "total": 251
+   },
+   {
+    "date": "2026-11-24",
+    "total": 261
    }
   ],
   "ft_crm_m1705": [
@@ -868,6 +943,10 @@
    },
    {
     "date": "2026-11-23",
+    "total": 1
+   },
+   {
+    "date": "2026-11-24",
     "total": 1
    }
   ],
@@ -903,6 +982,10 @@
    {
     "date": "2026-11-23",
     "total": 19
+   },
+   {
+    "date": "2026-11-24",
+    "total": 17
    }
   ],
   "ft_relationnel": [
@@ -937,6 +1020,10 @@
    {
     "date": "2026-11-23",
     "total": 4
+   },
+   {
+    "date": "2026-11-24",
+    "total": 3
    }
   ],
   "ft_rome_m1705": [
@@ -971,6 +1058,10 @@
    {
     "date": "2026-11-23",
     "total": 193
+   },
+   {
+    "date": "2026-11-24",
+    "total": 199
    }
   ],
   "lba_m1705": [
@@ -1042,26 +1133,30 @@
    }
   ]
  },
- "derniere": "2026-11-23",
+ "derniere": "2026-11-24",
  "comptes": {
-  "offres_uniques": 280,
-  "offres_metier": 38,
-  "offres_metier_ft": 38,
+  "offres_uniques": 276,
+  "offres_metier": 41,
+  "offres_metier_ft": 41,
   "offres_metier_lba": 0,
-  "alternance": 7
+  "alternance": 9
  },
  "variantes": [
   {
    "label": "Chargé·e CRM",
-   "n": 19
+   "n": 20
   },
   {
    "label": "CRM manager / responsable CRM",
-   "n": 10
+   "n": 11
   },
   {
    "label": "Marketing relationnel / fidélisation",
-   "n": 8
+   "n": 7
+  },
+  {
+   "label": "Emailing / marketing client",
+   "n": 2
   },
   {
    "label": "Marketing automation",
@@ -1069,6 +1164,10 @@
   }
  ],
  "intitules": [
+  {
+   "label": "Alternance Assistant Assistant chef de projet Marketing Client & CRM - Paris",
+   "n": 2
+  },
   {
    "label": "Alternance Assistant E-commerce, CRM & Marketing Digital / Alternance - Paris",
    "n": 2
@@ -1102,7 +1201,15 @@
    "n": 1
   },
   {
-   "label": "Chargé de projet CRM et qualité des données",
+   "label": "Chargé de Marketing CRM",
+   "n": 1
+  },
+  {
+   "label": "Chef de projet CRM et digitalisation",
+   "n": 1
+  },
+  {
+   "label": "Responsable Marketing CRM Automation",
    "n": 1
   },
   {
@@ -1116,51 +1223,35 @@
   {
    "label": "Consultant CRM",
    "n": 1
-  },
-  {
-   "label": "Customer Relationship Manager",
-   "n": 1
-  },
-  {
-   "label": "Consultant Solutions ERP et CRM pour PME",
-   "n": 1
-  },
-  {
-   "label": "Alternant CRM marketing et expérience utilisateur",
-   "n": 1
   }
  ],
  "regions": [
   {
    "label": "Île-de-France",
-   "n": 19
+   "n": 22
+  },
+  {
+   "label": "Auvergne-Rhône-Alpes",
+   "n": 4
   },
   {
    "label": "Provence-Alpes-Côte d'Azur",
    "n": 4
   },
   {
-   "label": "Auvergne-Rhône-Alpes",
-   "n": 3
-  },
-  {
    "label": "Pays de la Loire",
    "n": 3
-  },
-  {
-   "label": "Normandie",
-   "n": 2
   },
   {
    "label": "Hauts-de-France",
    "n": 2
   },
   {
-   "label": "Non renseignée",
-   "n": 2
+   "label": "Outre-mer",
+   "n": 1
   },
   {
-   "label": "Outre-mer",
+   "label": "Occitanie",
    "n": 1
   },
   {
@@ -1170,19 +1261,31 @@
   {
    "label": "Bretagne",
    "n": 1
+  },
+  {
+   "label": "Normandie",
+   "n": 1
+  },
+  {
+   "label": "Non renseignée",
+   "n": 1
   }
  ],
  "departements": [
   {
    "label": "75",
-   "n": 13
+   "n": 15
   },
   {
    "label": "92",
-   "n": 3
+   "n": 4
   },
   {
    "label": "74",
+   "n": 2
+  },
+  {
+   "label": "69",
    "n": 2
   },
   {
@@ -1194,10 +1297,6 @@
    "n": 2
   },
   {
-   "label": "?",
-   "n": 2
-  },
-  {
    "label": "06",
    "n": 2
   },
@@ -1206,7 +1305,7 @@
    "n": 1
   },
   {
-   "label": "14",
+   "label": "34",
    "n": 1
   },
   {
@@ -1225,18 +1324,14 @@
  "contrats": [
   {
    "label": "CDI",
-   "n": 29
+   "n": 31
   },
   {
    "label": "CDD - 12 Mois",
-   "n": 5
+   "n": 7
   },
   {
    "label": "CDD - 8 Mois",
-   "n": 1
-  },
-  {
-   "label": "CDD - 6 Mois",
    "n": 1
   },
   {
@@ -1255,24 +1350,20 @@
   },
   {
    "label": "Débutant accepté",
-   "n": 13
+   "n": 16
   }
  ],
  "tailles": [
   {
    "label": "Non renseignée",
-   "n": 23
+   "n": 25
   },
   {
    "label": "3 à 5 salariés",
-   "n": 4
+   "n": 5
   },
   {
    "label": "20 à 49 salariés",
-   "n": 2
-  },
-  {
-   "label": "10 à 19 salariés",
    "n": 2
   },
   {
@@ -1282,6 +1373,14 @@
   {
    "label": "250 à 499 salariés",
    "n": 2
+  },
+  {
+   "label": "10 à 19 salariés",
+   "n": 1
+  },
+  {
+   "label": "500 à 999 salariés",
+   "n": 1
   },
   {
    "label": "6 à 9 salariés",
@@ -1297,17 +1396,17 @@
   }
  ],
  "salaires": {
-  "n_ft": 38,
+  "n_ft": 41,
   "n_affiche": 16,
-  "part_affiche": 42.1,
-  "n_montants": 14,
-  "mediane_min_mensuel": 3750,
+  "part_affiche": 39.0,
+  "n_montants": 15,
+  "mediane_min_mensuel": 4167,
   "min": 800,
   "max": 5833,
   "exemples": [
    {
     "label": "Annuel de 50000.0 Euros à 60000.0 Euros",
-    "n": 3
+    "n": 4
    },
    {
     "label": "Annuel de 60000.0 Euros à 70000.0 Euros",
@@ -1326,7 +1425,7 @@
     "n": 1
    },
    {
-    "label": "Selon profil et expérience",
+    "label": "Annuel de 55000.0 Euros à 60000.0 Euros - 80% du transport remboursé",
     "n": 1
    }
   ]
@@ -1361,128 +1460,144 @@
   {
    "label": "Analyse de données / KPI",
    "categorie": "Compétence",
-   "n": 24,
-   "part": 63.2,
+   "n": 29,
+   "part": 70.7,
    "formation": "Partiel (expérience)",
    "justification": "Simulation Forage : définition de KPI."
   },
   {
-   "label": "Fidélisation / rétention",
-   "categorie": "Compétence",
-   "n": 19,
-   "part": 50.0,
-   "formation": "À compléter",
-   "justification": "Vérifier dans la maquette du Master 2."
-  },
-  {
    "label": "Marketing automation / scénarios",
    "categorie": "Compétence",
-   "n": 18,
-   "part": 47.4,
+   "n": 19,
+   "part": 46.3,
    "formation": "À compléter",
    "justification": "Vérifier dans la maquette du Master 2 (UE marketing digital)."
   },
   {
+   "label": "Fidélisation / rétention",
+   "categorie": "Compétence",
+   "n": 18,
+   "part": 43.9,
+   "formation": "À compléter",
+   "justification": "Vérifier dans la maquette du Master 2."
+  },
+  {
    "label": "Gestion de projet",
    "categorie": "Compétence",
-   "n": 15,
-   "part": 39.5,
+   "n": 18,
+   "part": 43.9,
    "formation": "À compléter",
    "justification": ""
   },
   {
+   "label": "Segmentation / ciblage",
+   "categorie": "Compétence",
+   "n": 17,
+   "part": 41.5,
+   "formation": "Oui (expérience)",
+   "justification": "Simulation Forage : segmentation des cibles. À croiser avec la maquette du Master."
+  },
+  {
    "label": "Parcours client",
    "categorie": "Compétence",
-   "n": 14,
-   "part": 36.8,
+   "n": 15,
+   "part": 36.6,
    "formation": "À compléter",
    "justification": "Vérifier dans la maquette du Master 2."
   },
   {
    "label": "Excel",
    "categorie": "Outil",
-   "n": 14,
-   "part": 36.8,
+   "n": 15,
+   "part": 36.6,
    "formation": "Oui (CV)",
    "justification": ""
   },
   {
-   "label": "Segmentation / ciblage",
-   "categorie": "Compétence",
-   "n": 13,
-   "part": 34.2,
-   "formation": "Oui (expérience)",
-   "justification": "Simulation Forage : segmentation des cibles. À croiser avec la maquette du Master."
-  },
-  {
    "label": "RGPD / qualité de la base",
    "categorie": "Compétence",
-   "n": 13,
-   "part": 34.2,
+   "n": 14,
+   "part": 34.1,
    "formation": "À compléter",
    "justification": ""
   },
   {
-   "label": "Rédaction / contenus",
-   "categorie": "Compétence",
-   "n": 10,
-   "part": 26.3,
-   "formation": "Oui (expérience)",
-   "justification": "Office National des Pêches : contenus Instagram et LinkedIn."
-  },
-  {
    "label": "Emailing / campagnes e-mail",
    "categorie": "Compétence",
-   "n": 9,
-   "part": 23.7,
+   "n": 13,
+   "part": 31.7,
    "formation": "Oui (expérience)",
    "justification": "Simulation Forage : emailings et lettre d'information."
   },
   {
+   "label": "Rédaction / contenus",
+   "categorie": "Compétence",
+   "n": 11,
+   "part": 26.8,
+   "formation": "Oui (expérience)",
+   "justification": "Office National des Pêches : contenus Instagram et LinkedIn."
+  },
+  {
    "label": "Anglais",
    "categorie": "Compétence",
-   "n": 9,
-   "part": 23.7,
+   "n": 10,
+   "part": 24.4,
    "formation": "À compléter",
    "justification": ""
   },
   {
    "label": "Lead scoring / génération de leads",
    "categorie": "Compétence",
-   "n": 7,
-   "part": 18.4,
+   "n": 8,
+   "part": 19.5,
    "formation": "À compléter",
    "justification": ""
   },
   {
    "label": "Salesforce",
    "categorie": "Outil",
-   "n": 6,
-   "part": 15.8,
+   "n": 7,
+   "part": 17.1,
    "formation": "Non",
    "justification": "Aucun cours ni expérience à ce jour."
   },
   {
    "label": "Microsoft Dynamics",
    "categorie": "Outil",
-   "n": 6,
-   "part": 15.8,
+   "n": 7,
+   "part": 17.1,
+   "formation": "Non",
+   "justification": ""
+  },
+  {
+   "label": "SQL",
+   "categorie": "Outil",
+   "n": 5,
+   "part": 12.2,
    "formation": "Non",
    "justification": ""
   },
   {
    "label": "Intelligence artificielle",
    "categorie": "Compétence",
-   "n": 5,
-   "part": 13.2,
+   "n": 4,
+   "part": 9.8,
    "formation": "Partiel (autoformation)",
    "justification": "Usage de Claude IA (CV)."
   },
   {
-   "label": "SQL",
+   "label": "HubSpot",
    "categorie": "Outil",
    "n": 4,
-   "part": 10.5,
+   "part": 9.8,
+   "formation": "Oui (certification)",
+   "justification": "Certification Inbound Marketing HubSpot Academy."
+  },
+  {
+   "label": "Brevo (Sendinblue)",
+   "categorie": "Outil",
+   "n": 4,
+   "part": 9.8,
    "formation": "Non",
    "justification": ""
   },
@@ -1490,23 +1605,15 @@
    "label": "A/B testing",
    "categorie": "Compétence",
    "n": 3,
-   "part": 7.9,
+   "part": 7.3,
    "formation": "À compléter",
    "justification": ""
   },
   {
-   "label": "HubSpot",
+   "label": "Adobe Campaign",
    "categorie": "Outil",
-   "n": 3,
-   "part": 7.9,
-   "formation": "Oui (certification)",
-   "justification": "Certification Inbound Marketing HubSpot Academy."
-  },
-  {
-   "label": "Brevo (Sendinblue)",
-   "categorie": "Outil",
-   "n": 3,
-   "part": 7.9,
+   "n": 2,
+   "part": 4.9,
    "formation": "Non",
    "justification": ""
   },
@@ -1514,7 +1621,7 @@
    "label": "Mailchimp / Klaviyo",
    "categorie": "Outil",
    "n": 2,
-   "part": 5.3,
+   "part": 4.9,
    "formation": "Non",
    "justification": ""
   },
@@ -1522,15 +1629,7 @@
    "label": "Power BI / Looker / Tableau",
    "categorie": "Outil",
    "n": 2,
-   "part": 5.3,
-   "formation": "Non",
-   "justification": ""
-  },
-  {
-   "label": "Adobe Campaign",
-   "categorie": "Outil",
-   "n": 1,
-   "part": 2.6,
+   "part": 4.9,
    "formation": "Non",
    "justification": ""
   },
@@ -1538,7 +1637,7 @@
    "label": "Google Analytics",
    "categorie": "Outil",
    "n": 1,
-   "part": 2.6,
+   "part": 2.4,
    "formation": "À compléter",
    "justification": ""
   },
@@ -1561,15 +1660,15 @@
  ],
  "competences_ft": [
   {
-   "label": "Recueillir et analyser les besoins client",
-   "n": 2
-  },
-  {
    "label": "Analyser les tendances de consommation des clients",
    "n": 2
   },
   {
    "label": "Maîtriser les stratégies et enjeux de la présence en ligne",
+   "n": 1
+  },
+  {
+   "label": "Recueillir et analyser les besoins client",
    "n": 1
   },
   {
@@ -1611,117 +1710,99 @@
  ],
  "evolution": {
   "de": "2026-11-16",
-  "a": "2026-11-23",
+  "a": "2026-11-24",
   "n_avant": 39,
-  "n_apres": 38,
+  "n_apres": 41,
   "mots": [
+   {
+    "label": "Emailing / campagnes e-mail",
+    "avant": 20.5,
+    "apres": 31.7,
+    "delta": 11.2
+   },
    {
     "label": "Parcours client",
     "avant": 25.6,
-    "apres": 36.8,
-    "delta": 11.2
+    "apres": 36.6,
+    "delta": 11.0
    },
    {
     "label": "RGPD / qualité de la base",
     "avant": 23.1,
-    "apres": 34.2,
-    "delta": 11.1
-   },
-   {
-    "label": "Marketing automation / scénarios",
-    "avant": 38.5,
-    "apres": 47.4,
-    "delta": 8.9
-   },
-   {
-    "label": "Anglais",
-    "avant": 17.9,
-    "apres": 23.7,
-    "delta": 5.8
-   },
-   {
-    "label": "A/B testing",
-    "avant": 2.6,
-    "apres": 7.9,
-    "delta": 5.3
+    "apres": 34.1,
+    "delta": 11.0
    },
    {
     "label": "Segmentation / ciblage",
     "avant": 30.8,
-    "apres": 34.2,
-    "delta": 3.4
+    "apres": 41.5,
+    "delta": 10.7
    },
    {
-    "label": "Emailing / campagnes e-mail",
-    "avant": 20.5,
-    "apres": 23.7,
-    "delta": 3.2
+    "label": "Marketing automation / scénarios",
+    "avant": 38.5,
+    "apres": 46.3,
+    "delta": 7.8
    },
    {
-    "label": "Microsoft Dynamics",
-    "avant": 12.8,
-    "apres": 15.8,
-    "delta": 3.0
-   },
-   {
-    "label": "Brevo (Sendinblue)",
-    "avant": 5.1,
-    "apres": 7.9,
-    "delta": 2.8
+    "label": "Anglais",
+    "avant": 17.9,
+    "apres": 24.4,
+    "delta": 6.5
    },
    {
     "label": "Adobe Campaign",
     "avant": 0.0,
-    "apres": 2.6,
-    "delta": 2.6
+    "apres": 4.9,
+    "delta": 4.9
+   },
+   {
+    "label": "A/B testing",
+    "avant": 2.6,
+    "apres": 7.3,
+    "delta": 4.7
+   },
+   {
+    "label": "Brevo (Sendinblue)",
+    "avant": 5.1,
+    "apres": 9.8,
+    "delta": 4.7
+   },
+   {
+    "label": "Microsoft Dynamics",
+    "avant": 12.8,
+    "apres": 17.1,
+    "delta": 4.3
    },
    {
     "label": "Google Analytics",
     "avant": 0.0,
-    "apres": 2.6,
-    "delta": 2.6
-   },
-   {
-    "label": "Fidélisation / rétention",
-    "avant": 48.7,
-    "apres": 50.0,
-    "delta": 1.3
-   },
-   {
-    "label": "Rédaction / contenus",
-    "avant": 25.6,
-    "apres": 26.3,
-    "delta": 0.7
-   },
-   {
-    "label": "Intelligence artificielle",
-    "avant": 12.8,
-    "apres": 13.2,
-    "delta": 0.4
+    "apres": 2.4,
+    "delta": 2.4
    },
    {
     "label": "HubSpot",
     "avant": 7.7,
-    "apres": 7.9,
-    "delta": 0.2
-   },
-   {
-    "label": "Mailchimp / Klaviyo",
-    "avant": 5.1,
-    "apres": 5.3,
-    "delta": 0.2
+    "apres": 9.8,
+    "delta": 2.1
    },
    {
     "label": "SQL",
     "avant": 10.3,
-    "apres": 10.5,
-    "delta": 0.2
+    "apres": 12.2,
+    "delta": 1.9
    },
    {
-    "label": "Power BI / Looker / Tableau",
-    "avant": 5.1,
-    "apres": 5.3,
-    "delta": 0.2
+    "label": "Analyse de données / KPI",
+    "avant": 69.2,
+    "apres": 70.7,
+    "delta": 1.5
+   },
+   {
+    "label": "Rédaction / contenus",
+    "avant": 25.6,
+    "apres": 26.8,
+    "delta": 1.2
    },
    {
     "label": "Canva / suite Adobe",
@@ -1730,10 +1811,28 @@
     "delta": 0.0
    },
    {
+    "label": "Mailchimp / Klaviyo",
+    "avant": 5.1,
+    "apres": 4.9,
+    "delta": -0.2
+   },
+   {
+    "label": "Power BI / Looker / Tableau",
+    "avant": 5.1,
+    "apres": 4.9,
+    "delta": -0.2
+   },
+   {
     "label": "Salesforce",
     "avant": 17.9,
-    "apres": 15.8,
-    "delta": -2.1
+    "apres": 17.1,
+    "delta": -0.8
+   },
+   {
+    "label": "Gestion de projet",
+    "avant": 46.2,
+    "apres": 43.9,
+    "delta": -2.3
    },
    {
     "label": "Selligent / Actito / Splio",
@@ -1742,39 +1841,39 @@
     "delta": -2.6
    },
    {
+    "label": "Intelligence artificielle",
+    "avant": 12.8,
+    "apres": 9.8,
+    "delta": -3.0
+   },
+   {
     "label": "Excel",
     "avant": 41.0,
-    "apres": 36.8,
-    "delta": -4.2
+    "apres": 36.6,
+    "delta": -4.4
    },
    {
-    "label": "Analyse de données / KPI",
-    "avant": 69.2,
-    "apres": 63.2,
-    "delta": -6.0
-   },
-   {
-    "label": "Gestion de projet",
-    "avant": 46.2,
-    "apres": 39.5,
-    "delta": -6.7
+    "label": "Fidélisation / rétention",
+    "avant": 48.7,
+    "apres": 43.9,
+    "delta": -4.8
    },
    {
     "label": "Lead scoring / génération de leads",
     "avant": 25.6,
-    "apres": 18.4,
-    "delta": -7.2
+    "apres": 19.5,
+    "delta": -6.1
    }
   ]
  },
  "entreprises": [
   {
    "label": "ISCOD",
-   "n": 2
+   "n": 3
   },
   {
    "label": "ADSEARCH",
-   "n": 2
+   "n": 3
   },
   {
    "label": "SMCP",
@@ -1793,7 +1892,7 @@
    "n": 1
   },
   {
-   "label": "CAEN NORMANDIE DEVELOPPEMENT",
+   "label": "BAYARD SA",
    "n": 1
   },
   {
@@ -1850,180 +1949,13 @@
   }
  ],
  "marche_cache": {
-  "n_recruteurs": 19,
-  "n_sans_offre": 19,
-  "liste": [
-   {
-    "entreprise": "ADOBE SYSTEMS FRANCE SAS",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/35038196800097/adobe-systems-france-sas"
-   },
-   {
-    "entreprise": "CENTRE FRANCE INFO REGION",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Activités des agences de presse",
-    "taille": "6-9",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/41125296800069/centre-france-info-region"
-   },
-   {
-    "entreprise": "SMARTRIPS",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/98783236700021/smartrips"
-   },
-   {
-    "entreprise": "ACCESS BRAIN",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/88442044900040/access-brain"
-   },
-   {
-    "entreprise": "NEXEN SOFTWARE",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/99904858000024/nexen-software"
-   },
-   {
-    "entreprise": "COREN",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Autres travaux de finition",
-    "taille": "6-9",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/39761599800218/coren"
-   },
-   {
-    "entreprise": "AUVERGNE PRO SERVICES",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Autres travaux de finition",
-    "taille": "1-2",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/50167516900038/auvergne-pro-services"
-   },
-   {
-    "entreprise": "ACM",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Assurance vie",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/44053655501069/acm"
-   },
-   {
-    "entreprise": "WALTIO",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "10-19",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/84753565500025/waltio"
-   },
-   {
-    "entreprise": "LES EDITIONS DU COLPORTEUR",
-    "commune": "CLERMONT-FERRAND",
-    "secteur": "Édition de livres",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/98992330500027/les-editions-du-colporteur"
-   },
-   {
-    "entreprise": "HARVEST FRANCE",
-    "commune": "AUBIERE",
-    "secteur": "Edition de logiciels applicatifs",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/35204234500145/harvest-france"
-   },
-   {
-    "entreprise": "FACE ET FACADES",
-    "commune": "COURNON-D'AUVERGNE",
-    "secteur": "Autres travaux de finition",
-    "taille": "1-2",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/42933129100014/face-et-facades"
-   },
-   {
-    "entreprise": "MARCHE AUX FLEURS",
-    "commune": "LEMPDES",
-    "secteur": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
-    "taille": "3-5",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/98254447000056/marche-aux-fleurs"
-   },
-   {
-    "entreprise": "HEIDI IMPORT EXPORT",
-    "commune": "Riom",
-    "secteur": "Commerce de gros (commerce interentreprises) de textiles",
-    "taille": "0-0",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/84491206300022/heidi-import-export"
-   },
-   {
-    "entreprise": "L'OUTIL PARFAIT",
-    "commune": "La Monnerie-le-Montel",
-    "secteur": "Fabrication d'autres outillages",
-    "taille": "100-199",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/74698012700045/marquardt"
-   },
-   {
-    "entreprise": "L'ATELIER DE SO",
-    "commune": "BELLERIVE-SUR-ALLIER",
-    "secteur": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
-    "taille": "1-2",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/91211225700015/l-atelier-de-so"
-   },
-   {
-    "entreprise": "AUDIO VISION SERVICE",
-    "commune": "BELLERIVE-SUR-ALLIER",
-    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
-    "taille": "10-19",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/33809612600036/audio-vision-service"
-   },
-   {
-    "entreprise": "MEDAS INSTRUMENTS",
-    "commune": "VICHY",
-    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
-    "taille": "10-19",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/31091454400021/medas-instruments"
-   },
-   {
-    "entreprise": "C.B.D.G.",
-    "commune": "CREUZIER-LE-NEUF",
-    "secteur": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
-    "taille": "6-9",
-    "url": "https://labonnealternance.apprentissage.beta.gouv.fr/emploi/recruteurs_lba/97702021300038/c-b-d-g"
-   }
-  ],
-  "secteurs": [
-   {
-    "label": "Edition de logiciels applicatifs",
-    "n": 6
-   },
-   {
-    "label": "Autres travaux de finition",
-    "n": 3
-   },
-   {
-    "label": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
-    "n": 3
-   },
-   {
-    "label": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
-    "n": 2
-   },
-   {
-    "label": "Activités des agences de presse",
-    "n": 1
-   },
-   {
-    "label": "Assurance vie",
-    "n": 1
-   },
-   {
-    "label": "Édition de livres",
-    "n": 1
-   },
-   {
-    "label": "Commerce de gros (commerce interentreprises) de textiles",
-    "n": 1
-   }
-  ]
+  "n_recruteurs": 0,
+  "n_sans_offre": 0,
+  "liste": [],
+  "secteurs": []
  },
  "publication": {
-  "reference": "2026-11-23",
+  "reference": "2026-11-24",
   "semaines": [
    {
     "debut": "2026-10-05",
@@ -2035,43 +1967,43 @@
     "debut": "2026-10-12",
     "fin": "2026-10-18",
     "n_metier": 1,
-    "n_collectees": 12
+    "n_collectees": 13
    },
    {
     "debut": "2026-10-19",
     "fin": "2026-10-25",
     "n_metier": 1,
-    "n_collectees": 18
+    "n_collectees": 16
    },
    {
     "debut": "2026-10-26",
     "fin": "2026-11-01",
     "n_metier": 0,
-    "n_collectees": 38
+    "n_collectees": 36
    },
    {
     "debut": "2026-11-02",
     "fin": "2026-11-08",
-    "n_metier": 12,
-    "n_collectees": 52
+    "n_metier": 11,
+    "n_collectees": 47
    },
    {
     "debut": "2026-11-09",
     "fin": "2026-11-15",
     "n_metier": 4,
-    "n_collectees": 39
+    "n_collectees": 35
    },
    {
     "debut": "2026-11-16",
     "fin": "2026-11-22",
-    "n_metier": 14,
-    "n_collectees": 71
+    "n_metier": 13,
+    "n_collectees": 64
    },
    {
     "debut": "2026-11-23",
-    "fin": "2026-11-23",
-    "n_metier": 3,
-    "n_collectees": 8
+    "fin": "2026-11-24",
+    "n_metier": 8,
+    "n_collectees": 22
    }
   ],
   "variantes": {
@@ -2080,10 +2012,10 @@
     0,
     1,
     0,
-    4,
+    3,
     2,
     8,
-    2
+    4
    ],
    "CRM manager / responsable CRM": [
     0,
@@ -2093,7 +2025,17 @@
     4,
     1,
     4,
-    1
+    2
+   ],
+   "Emailing / marketing client": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
    ],
    "Marketing relationnel / fidélisation": [
     0,
@@ -2102,7 +2044,7 @@
     0,
     3,
     1,
-    2,
+    1,
     0
    ],
    "Marketing automation": [
@@ -2120,6 +2062,56 @@
   "sans_date": 0
  },
  "veille": [
+  {
+   "date_publication": "2026-11-24",
+   "intitule": "Alternance Assistant Assistant chef de projet Marketing Client & CRM - Paris (F/H)",
+   "entreprise": "",
+   "commune": "75 - Paris",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9148698"
+  },
+  {
+   "date_publication": "2026-11-24",
+   "intitule": "Chargé de Marketing CRM H/F",
+   "entreprise": "",
+   "commune": "69 - Lyon",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9145782"
+  },
+  {
+   "date_publication": "2026-11-24",
+   "intitule": "Alternance Assistant Assistant chef de projet Marketing Client & CRM - Paris (H/F)",
+   "entreprise": "ISCOD",
+   "commune": "75 - Paris 8e Arrondissement",
+   "contrat": "CDD - 12 Mois",
+   "alternance": "oui",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9137095"
+  },
+  {
+   "date_publication": "2026-11-24",
+   "intitule": "Chef de projet CRM et digitalisation (H/F)",
+   "entreprise": "ADSEARCH",
+   "commune": "34 - Béziers",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9134994"
+  },
+  {
+   "date_publication": "2026-11-24",
+   "intitule": "Responsable Marketing CRM Automation (F/H)",
+   "entreprise": "BAYARD SA",
+   "commune": "92 - Malakoff",
+   "contrat": "CDI",
+   "alternance": "non",
+   "canal": "France Travail",
+   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9113166"
+  },
   {
    "date_publication": "2026-11-23",
    "intitule": "Chargé de réseaux sociaux & CRM H/F",
@@ -2149,16 +2141,6 @@
    "alternance": "non",
    "canal": "France Travail",
    "url": "https://candidat.francetravail.fr/offres/recherche/detail/9101213"
-  },
-  {
-   "date_publication": "2026-11-22",
-   "intitule": "Avocat dans une Start-Up - Participer au développement et la fidélisation clientèle (H/F)",
-   "entreprise": "",
-   "commune": "Luxembourg",
-   "contrat": "CDI",
-   "alternance": "non",
-   "canal": "France Travail",
-   "url": "https://candidat.francetravail.fr/offres/recherche/detail/9075951"
   },
   {
    "date_publication": "2026-11-21",
@@ -2369,16 +2351,6 @@
    "alternance": "non",
    "canal": "France Travail",
    "url": "https://candidat.francetravail.fr/offres/recherche/detail/8636147"
-  },
-  {
-   "date_publication": "2026-11-06",
-   "intitule": "Chargé(e) de projet CRM et qualité des données (H/F)",
-   "entreprise": "CAEN NORMANDIE DEVELOPPEMENT",
-   "commune": "14 - CAEN",
-   "contrat": "CDD - 6 Mois",
-   "alternance": "non",
-   "canal": "France Travail",
-   "url": "https://candidat.francetravail.fr/offres/recherche/detail/216DMYR"
   },
   {
    "date_publication": "2026-11-06",
